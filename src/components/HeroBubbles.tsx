@@ -1,36 +1,44 @@
 import { useEffect, useState } from 'react';
+import { PawPrint } from 'lucide-react';
 
 export default function HeroBubbles() {
-  const [bubbles, setBubbles] = useState<any[]>([]);
-  
+  const [paws, setPaws] = useState<any[]>([]);
+
   useEffect(() => {
-    // Generate different bubbles with random positions and animation attributes
-    const newBubbles = Array.from({ length: 20 }).map((_, i) => ({
+    const newPaws = Array.from({ length: 18 }).map((_, i) => ({
       id: i,
-      size: Math.random() * 60 + 20, // 20px to 80px
-      left: Math.random() * 100, // 0% to 100%
+      size: Math.random() * 42 + 14,
+      left: Math.random() * 100,
       top: Math.random() * 100,
-      delay: Math.random() * -10, // Start somewhere in animation
-      duration: Math.random() * 8 + 8, // 8s to 16s
+      delay: Math.random() * -10,
+      duration: Math.random() * 8 + 8,
+      rotate: Math.random() * 360,
+      opacity: Math.random() * 0.14 + 0.07,
     }));
-    setBubbles(newBubbles);
+    setPaws(newPaws);
   }, []);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {bubbles.map(b => (
+      {paws.map(p => (
         <div
-          key={b.id}
-          className="bubble opacity-60"
+          key={p.id}
+          className="paw"
           style={{
-            width: `${b.size}px`,
-            height: `${b.size}px`,
-            left: `${b.left}%`,
-            top: `${b.top}%`,
-            animationDelay: `${b.delay}s`,
-            animationDuration: `${b.duration}s`,
+            left: `${p.left}%`,
+            top: `${p.top}%`,
+            animationDelay: `${p.delay}s`,
+            animationDuration: `${p.duration}s`,
+            transform: `rotate(${p.rotate}deg)`,
+            opacity: p.opacity,
           }}
-        />
+        >
+          <PawPrint
+            color="white"
+            strokeWidth={1.2}
+            style={{ width: `${p.size}px`, height: `${p.size}px` }}
+          />
+        </div>
       ))}
     </div>
   );
