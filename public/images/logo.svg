@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <!-- Orange background circle -->
+  <circle cx="40" cy="40" r="40" fill="#F5A623"/>
+  <!-- White paw print -->
+  <!-- Main pad -->
+  <ellipse cx="40" cy="54" rx="17" ry="14" fill="white"/>
+  <!-- Left toe -->
+  <circle cx="21" cy="36" r="8" fill="white"/>
+  <!-- Center toe -->
+  <circle cx="40" cy="28" r="9" fill="white"/>
+  <!-- Right toe -->
+  <circle cx="59" cy="36" r="8" fill="white"/>
+  <!-- Knuckle dividers on main pad -->
+  <line x1="31" y1="50" x2="31" y2="58" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="40" y1="48" x2="40" y2="59" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="49" y1="50" x2="49" y2="58" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

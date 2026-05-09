@@ -18,9 +18,11 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="bg-brand-orange text-white font-bold w-12 h-12 rounded-full flex items-center justify-center text-2xl">
-                MG
-              </div>
+              <img
+                src="/images/logo.svg"
+                alt="Mr. Groomer"
+                className="w-12 h-12 group-hover:scale-105 transition-transform"
+              />
               <div className="flex flex-col">
                 <span className="font-bold text-2xl leading-none text-white">Mister Groomer</span>
                 <span className="text-xs italic text-brand-light-teal opacity-80">Your trusted stylist</span>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import HeroBubbles from '../components/HeroBubbles';
-import PlaceholderImage from '../components/PlaceholderImage';
 import { Award, Heart, Users, CheckCircle2 } from 'lucide-react';
+import { IMG } from '../lib/images';
 
 export default function Nosotros() {
   return (
@@ -24,13 +24,17 @@ export default function Nosotros() {
       <div className="max-w-7xl mx-auto px-4 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-            <PlaceholderImage theme="orange" className="w-full h-full object-cover rounded-none" />
+            <img
+              src={IMG.founder}
+              alt="José Joaquín Toledo – Fundador y Head Groomer de Mr. Groomer"
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
               <p className="text-white font-bold text-xl">José Joaquín Toledo</p>
               <p className="text-brand-light-teal text-sm">Fundador & Head Groomer</p>
             </div>
           </div>
-          
+
           <div>
             <span className="text-brand-orange font-bold tracking-widest uppercase text-sm mb-2 block">Un Emprendimiento Familiar</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-6 leading-tight">
@@ -38,20 +42,20 @@ export default function Nosotros() {
             </h2>
             <div className="prose prose-lg text-brand-muted mb-8">
               <p>
-                Mr. Groomer nace del corazón y la dedicación. Tras trabajar durante más de 9 años como estilista canino y felino 
-                en algunas de las peluquerías más prestigiosas y de nivel VIP en el norte de Quito, decidí emprender 
+                Mr. Groomer nace del corazón y la dedicación. Tras trabajar durante más de 9 años como estilista canino y felino
+                en algunas de las peluquerías más prestigiosas y de nivel VIP en el norte de Quito, decidí emprender
                 junto a mi familia.
               </p>
               <p>
-                La idea era simple pero poderosa: traer ese mismo nivel de exigencia, técnica refinada y uso de productos de altísima gama, 
+                La idea era simple pero poderosa: traer ese mismo nivel de exigencia, técnica refinada y uso de productos de altísima gama,
                 pero con un trato cercano y cálido, directo a nuestro propio sector en Conocoto.
               </p>
               <p>
-                Creemos que el grooming no es solo estética; es salud, es prevención y es una demostración de amor. Cada mascota que 
+                Creemos que el grooming no es solo estética; es salud, es prevención y es una demostración de amor. Cada mascota que
                 entra a nuestro local se convierte en un miembro más de la familia Mr. Groomer.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
               <div className="flex gap-4 items-center">
                 <div className="bg-brand-light-teal p-3 rounded-xl text-brand-teal"><Award className="w-6 h-6" /></div>
@@ -72,10 +76,10 @@ export default function Nosotros() {
         </div>
       </div>
 
-      {/* Values & Timeline Context */}
+      {/* Values & Timeline */}
       <div className="bg-[#FAFAFA] py-24 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4">
-          
+
           {/* Mission & Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             <div className="bg-brand-dark-teal rounded-3xl p-10 lg:p-12 text-white shadow-xl transform transition-transform hover:-translate-y-2">
@@ -109,7 +113,7 @@ export default function Nosotros() {
                 <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-orange text-white text-xs font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow flex-col z-10">
                   <CheckCircle2 className="w-5 h-5 absolute" />
                 </div>
-                
+
                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-teal/30 transition-colors">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-bold text-brand-orange text-xl">{step.year}</span>

@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
-import PlaceholderImage from '../components/PlaceholderImage';
+import { IMG } from '../lib/images';
 
 const POSTS = [
-  { id: 1, title: '¿Cada cuánto tiempo debo bañar a mi perro?', cat: 'Cuidado', exc: 'La frecuencia ideal depende de la raza, tipo de pelo y estilo de vida. Te explicamos las reglas generales para no afectar su piel.', date: '15 Ene 2025', time: '5 min' },
-  { id: 2, title: 'Señales de que tu gato necesita un baño medicado', cat: 'Salud', exc: 'Si notas rascado excesivo, enrojecimiento o caspa, tu felino podría necesitar atención especializada.', date: '10 Ene 2025', time: '4 min' },
-  { id: 3, title: 'Cómo elegir el shampoo correcto según la raza', cat: 'Grooming', exc: 'No todos los productos son iguales. Descubre por qué el pH es vital para mantener un pelaje brillante.', date: '05 Ene 2025', time: '6 min' },
-  { id: 4, title: 'Cuidado de uñas: por qué es tan importante', cat: 'Salud', exc: 'Uñas muy largas pueden causar dolor al caminar y problemas articulares. Aprende a identificar cuándo es tiempo de un corte.', date: '28 Dic 2024', time: '3 min' },
-  { id: 5, title: 'Diferencias entre el pelaje de un Schnauzer y un Golden', cat: 'Cuidado', exc: 'El stripping vs el deslanado. Entiende las necesidades únicas del manto de tu perro.', date: '20 Dic 2024', time: '7 min' },
-  { id: 6, title: 'Preparar a tu cachorro para su primer baño profesional', cat: 'Grooming', exc: 'Consejos para que su primera visita a la peluquería sea una experiencia positiva y libre de estrés.', date: '15 Dic 2024', time: '4 min' },
+  { id: 1, title: '¿Cada cuánto tiempo debo bañar a mi perro?',          cat: 'Cuidado',  exc: 'La frecuencia ideal depende de la raza, tipo de pelo y estilo de vida. Te explicamos las reglas generales para no afectar su piel.',                           date: '15 Ene 2025', time: '5 min' },
+  { id: 2, title: 'Señales de que tu gato necesita un baño medicado',    cat: 'Salud',    exc: 'Si notas rascado excesivo, enrojecimiento o caspa, tu felino podría necesitar atención especializada.',                                                          date: '10 Ene 2025', time: '4 min' },
+  { id: 3, title: 'Cómo elegir el shampoo correcto según la raza',       cat: 'Grooming', exc: 'No todos los productos son iguales. Descubre por qué el pH es vital para mantener un pelaje brillante.',                                                         date: '05 Ene 2025', time: '6 min' },
+  { id: 4, title: 'Cuidado de uñas: por qué es tan importante',          cat: 'Salud',    exc: 'Uñas muy largas pueden causar dolor al caminar y problemas articulares. Aprende a identificar cuándo es tiempo de un corte.',                                     date: '28 Dic 2024', time: '3 min' },
+  { id: 5, title: 'Diferencias entre el pelaje de un Schnauzer y un Golden', cat: 'Cuidado', exc: 'El stripping vs el deslanado. Entiende las necesidades únicas del manto de tu perro.',                                                                        date: '20 Dic 2024', time: '7 min' },
+  { id: 6, title: 'Preparar a tu cachorro para su primer baño profesional', cat: 'Grooming', exc: 'Consejos para que su primera visita a la peluquería sea una experiencia positiva y libre de estrés.',                                                         date: '15 Dic 2024', time: '4 min' },
 ];
+
+const POST_IMAGES = [IMG.blog[1], IMG.blog[2], IMG.blog[3], IMG.blog[4], IMG.blog[5], IMG.blog[6]];
 
 export default function Blog() {
   return (
@@ -27,12 +29,16 @@ export default function Blog() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-12 -mt-8 relative z-10">
-        
+
         {/* Featured Post */}
-        <Link to={`/blog/post-1`} className="block mb-16 bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-gray-100 group">
+        <Link to="/blog/post-1" className="block mb-16 bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-gray-100 group">
           <div className="flex flex-col md:flex-row h-full">
             <div className="w-full md:w-1/2 lg:w-3/5 h-64 md:h-auto overflow-hidden">
-              <PlaceholderImage theme="teal" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 rounded-none" />
+              <img
+                src={IMG.blog[0]}
+                alt="¿Cada cuánto tiempo debo bañar a mi perro?"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
             </div>
             <div className="w-full md:w-1/2 lg:w-2/5 p-8 md:p-12 flex flex-col justify-center">
               <span className="inline-block bg-brand-orange/10 text-brand-orange font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest w-max mb-4">Destacado</span>
@@ -40,7 +46,7 @@ export default function Blog() {
                 ¿Cada cuánto tiempo debo bañar a mi perro?
               </h2>
               <p className="text-brand-muted text-lg mb-8 line-clamp-3">
-                Conoce los mitos y realidades sobre la frecuencia del baño canino. Un exceso de agua y jabón puede ser tan perjudicial como la falta de higiene. Te lo explicamos todo.
+                Conoce los mitos y realidades sobre la frecuencia del baño canino. Un exceso de agua y jabón puede ser tan perjudicial como la falta de higiene.
               </p>
               <div className="flex items-center justify-between text-sm mt-auto">
                 <div className="flex items-center gap-4 text-brand-muted font-medium">
@@ -54,23 +60,28 @@ export default function Blog() {
             </div>
           </div>
         </Link>
-        
-        {/* Grid */}
+
+        {/* Posts Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {POSTS.map((post) => (
-            <Link key={post.id} to={`/blog/post-1`} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 group flex flex-col hover:-translate-y-1">
+          {POSTS.map((post, i) => (
+            <Link key={post.id} to="/blog/post-1" className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 group flex flex-col hover:-translate-y-1">
               <div className="h-56 relative overflow-hidden">
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-white/90 backdrop-blur-sm text-brand-dark-teal text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                     {post.cat}
                   </span>
                 </div>
-                <PlaceholderImage theme="light-teal" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 rounded-none" />
+                <img
+                  src={POST_IMAGES[i] ?? IMG.blog[1]}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
               </div>
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-brand-dark mb-3 line-clamp-2 group-hover:text-brand-teal transition-colors">{post.title}</h3>
                 <p className="text-brand-muted text-sm mb-6 line-clamp-2">{post.exc}</p>
-                
+
                 <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-brand-muted">
                   <div className="flex items-center gap-2">
                     <div className="w-6 h-6 bg-brand-teal rounded-full text-white flex items-center justify-center font-bold">J</div>

@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
-import PlaceholderImage from '../components/PlaceholderImage';
+import { IMG } from '../lib/images';
 
 const PRODUCTS = [
-  { id: 1, name: 'Shampoo Hipoalergénico Premium', desc: 'Ideal para razas con piel sensible.', price: '$15.00' },
-  { id: 2, name: 'Acondicionador Desenredante', desc: 'Facilita el cepillado diario en pelo largo.', price: '$12.00' },
-  { id: 3, name: 'Perfume Cologne Frescura', desc: 'El mismo aroma que usamos en el spa.', price: '$10.00' },
-  { id: 4, name: 'Limpiador de Oídos Natural', desc: 'Prevención de otitis sin irritar.', price: '$8.50' },
-  { id: 5, name: 'Cepillo Carda Profesional', desc: 'Extrae pelo muerto sin rasguñar.', price: '$14.00' },
-  { id: 6, name: 'Cortaúñas de Seguridad', desc: 'Tope metálico para evitar cortes profundos.', price: '$9.00' },
+  { id: 1, name: 'Shampoo Hipoalergénico Premium', desc: 'Ideal para razas con piel sensible.',        price: '$15.00' },
+  { id: 2, name: 'Acondicionador Desenredante',    desc: 'Facilita el cepillado diario en pelo largo.', price: '$12.00' },
+  { id: 3, name: 'Perfume Cologne Frescura',       desc: 'El mismo aroma que usamos en el spa.',        price: '$10.00' },
+  { id: 4, name: 'Limpiador de Oídos Natural',     desc: 'Prevención de otitis sin irritar.',           price: '$8.50'  },
+  { id: 5, name: 'Cepillo Carda Profesional',      desc: 'Extrae pelo muerto sin rasguñar.',             price: '$14.00' },
+  { id: 6, name: 'Cortaúñas de Seguridad',         desc: 'Tope metálico para evitar cortes profundos.', price: '$9.00'  },
 ];
 
 export default function Tienda() {
@@ -29,7 +29,7 @@ export default function Tienda() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-12 -mt-8 relative z-10">
-        
+
         {/* Coming Soon Banner */}
         <div className="bg-brand-dark-teal text-white rounded-3xl p-8 sm:p-12 text-center shadow-xl mb-16 relative overflow-hidden">
           <div className="absolute -right-8 -bottom-8 opacity-10">
@@ -43,9 +43,9 @@ export default function Tienda() {
             <p className="text-lg text-brand-light-teal max-w-2xl mx-auto mb-8">
               Muy pronto podrás comprar directamente por la web. Por ahora, consulta disponibilidad y precios de nuestros productos exclusivos a través de WhatsApp.
             </p>
-            <a 
-              href="https://wa.me/593978751586?text=Hola,%20quisiera%20consultar%20sobre%20los%20productos%20que%20tienen%20a%20la%20venta." 
-              target="_blank" 
+            <a
+              href="https://wa.me/593978751586?text=Hola,%20quisiera%20consultar%20sobre%20los%20productos%20que%20tienen%20a%20la%20venta."
+              target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 bg-brand-teal hover:bg-[#15825f] text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:-translate-y-1"
             >
@@ -61,18 +61,23 @@ export default function Tienda() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {PRODUCTS.map((product) => (
+          {PRODUCTS.map((product, i) => (
             <div key={product.id} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col group p-2">
-              <div className="h-64 rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center relative">
-                <PlaceholderImage theme="light-teal" className="w-[80%] h-[80%] object-contain group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-100 to-transparent opacity-50"></div>
+              <div className="h-64 rounded-2xl overflow-hidden bg-gray-50 relative">
+                <img
+                  src={IMG.products[i]}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               <div className="p-6 flex-grow flex flex-col text-center">
                 <h4 className="text-xl font-bold text-brand-dark mb-2">{product.name}</h4>
                 <p className="text-brand-muted text-sm mb-6 flex-grow">{product.desc}</p>
                 <p className="text-2xl font-extrabold text-brand-orange mb-6">{product.price}</p>
-                
-                <a 
+
+                <a
                   href={`https://wa.me/593978751586?text=Hola,%20me%20interesa%20el%20producto:%20${encodeURIComponent(product.name)}`}
                   target="_blank"
                   rel="noreferrer"

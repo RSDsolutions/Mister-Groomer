@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import HeroBubbles from '../components/HeroBubbles';
-import PlaceholderImage from '../components/PlaceholderImage';
 import { ArrowRight, Star, Heart, CheckCircle2, Phone, MessageCircle } from 'lucide-react';
+import { IMG } from '../lib/images';
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
                 El Estilista de <span className="text-brand-orange">Confianza</span> de tu Mascota
               </h1>
               <p className="text-lg sm:text-xl text-brand-light-teal mb-8 max-w-2xl mx-auto lg:mx-0">
-                Peluquería Canina y Felina en Conocoto por José Joaquín Toledo. 
+                Peluquería Canina y Felina en Conocoto por José Joaquín Toledo.
                 Más de 9 años de experiencia nivel VIP de Quito, ahora en tu barrio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -34,7 +34,11 @@ export default function Home() {
             </div>
             <div className="hidden lg:block relative h-[500px]">
               <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-full blur-3xl transform scale-90"></div>
-              <PlaceholderImage theme="orange" className="h-full w-full object-cover shadow-2xl relative z-10" />
+              <img
+                src={IMG.hero}
+                alt="Mascota feliz después del grooming en Mr. Groomer"
+                className="h-full w-full object-cover rounded-3xl shadow-2xl relative z-10"
+              />
             </div>
           </div>
         </div>
@@ -64,7 +68,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-4">Servicios Disponibles</h2>
             <p className="text-brand-muted max-w-2xl mx-auto">Tratamientos completos para la salud y belleza de tu mejor amigo.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { title: 'Servicio Completo', desc: 'Baño, corte, secado y más.', icon: '🛁' },
@@ -89,15 +93,20 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 h-[400px] lg:h-[600px] w-full">
-              <PlaceholderImage theme="teal" className="h-full shadow-lg" />
+            <div className="order-2 lg:order-1 h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-lg">
+              <img
+                src={IMG.aboutTeaser}
+                alt="José Joaquín Toledo trabajando con una mascota en Mr. Groomer"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
             </div>
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-6">Un emprendimiento familiar con corazón</h2>
               <p className="text-brand-muted text-lg mb-8">
                 Mr. Groomer nace del deseo de brindar un servicio de excelencia, cuidando cada detalle para que tu mascota viva una experiencia sin estrés y con resultados profesionales.
               </p>
-              
+
               <ul className="space-y-4 mb-8">
                 {[
                   'Experiencia VIP',
@@ -110,7 +119,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              
+
               <Link to="/nosotros" className="inline-flex items-center gap-2 bg-brand-teal hover:bg-brand-dark-teal text-white px-8 py-4 rounded-full font-medium transition-colors shadow-md">
                 Conoce nuestra historia
               </Link>
@@ -131,12 +140,17 @@ export default function Home() {
               Ver galería completa <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
-          
-          <div className="flex overflow-x-auto gap-6 sm:gap-8 pb-8 snap-x snap-mandatory hide-scrollbars -mx-4 px-4 sm:mx-0 sm:px-0">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="min-w-[300px] w-[80vw] sm:w-[400px] shrink-0 snap-center">
-                <div className="bg-white rounded-3xl p-4 shadow-sm h-72 sm:h-80">
-                  <PlaceholderImage theme="orange" className="h-full rounded-2xl" />
+
+          <div className="flex overflow-x-auto gap-6 sm:gap-8 pb-8 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
+            {IMG.galleryTeaser.map((src, i) => (
+              <div key={i} className="min-w-[300px] w-[80vw] sm:w-[400px] shrink-0 snap-center">
+                <div className="bg-white rounded-3xl p-4 shadow-sm h-72 sm:h-80 overflow-hidden">
+                  <img
+                    src={src}
+                    alt={`Resultado de grooming ${i + 1} en Mr. Groomer`}
+                    className="h-full w-full object-cover rounded-2xl hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             ))}
@@ -156,21 +170,27 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-4">Tips de Cuidado</h2>
             <p className="text-brand-muted max-w-2xl mx-auto">Consejos profesionales para mantener a tu mascota sana entre citas.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((post) => (
-              <div key={post} className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group flex flex-col">
+            {[
+              { img: IMG.blog[1], title: 'Señales de que tu gato necesita un baño medicado', date: '10 Ene 2025' },
+              { img: IMG.blog[2], title: 'Cómo elegir el shampoo correcto según la raza', date: '05 Ene 2025' },
+              { img: IMG.blog[5], title: 'Preparar a tu cachorro para su primer baño profesional', date: '15 Dic 2024' },
+            ].map((post, i) => (
+              <div key={i} className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group flex flex-col">
                 <div className="h-48 relative overflow-hidden">
-                  <PlaceholderImage theme="teal" className="group-hover:scale-105 transition-transform duration-500 rounded-none w-full" />
+                  <img
+                    src={post.img}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <span className="text-xs font-semibold text-brand-orange uppercase tracking-wider mb-2">Cuidado</span>
-                  <h3 className="text-lg font-bold text-brand-dark mb-3 line-clamp-2">¿Cómo mantener su pelaje brillante por más tiempo?</h3>
-                  <p className="text-brand-muted text-sm mb-6 line-clamp-3">
-                    Aprende los secretos y técnicas para que el baño de tu mejor amigo dure mucho más aplicando estos sencillos consejos caseros.
-                  </p>
+                  <h3 className="text-lg font-bold text-brand-dark mb-3 line-clamp-2">{post.title}</h3>
                   <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center text-sm">
-                    <span className="text-brand-muted">12 Ene 2025</span>
+                    <span className="text-brand-muted">{post.date}</span>
                     <Link to="/blog/post-1" className="font-semibold text-brand-teal hover:text-brand-dark-teal transition-colors">Leer más</Link>
                   </div>
                 </div>

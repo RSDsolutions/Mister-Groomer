@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import PlaceholderImage from '../components/PlaceholderImage';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import { cn } from '../lib/utils';
+import { IMG } from '../lib/images';
 
 const FILTERS = ['Todos', 'Perros', 'Gatos', 'Antes & Después', 'Golden', 'Schnauzer', 'Poodle', 'Otros'];
 
 export default function Galeria() {
   const [activeFilter, setActiveFilter] = useState('Todos');
+
+  const filtered = activeFilter === 'Todos' || activeFilter === 'Antes & Después'
+    ? IMG.gallery
+    : IMG.gallery.filter(g => g.type === activeFilter);
 
   return (
     <div className="animate-in fade-in duration-500 bg-[#FAFAFA]">
@@ -33,10 +37,10 @@ export default function Galeria() {
               key={f}
               onClick={() => setActiveFilter(f)}
               className={cn(
-                "px-5 py-2.5 rounded-full text-sm font-medium transition-all",
-                activeFilter === f 
-                  ? "bg-brand-orange text-white shadow-md"
-                  : "bg-white text-brand-muted hover:bg-gray-100 border border-gray-200"
+                'px-5 py-2.5 rounded-full text-sm font-medium transition-all',
+                activeFilter === f
+                  ? 'bg-brand-orange text-white shadow-md'
+                  : 'bg-white text-brand-muted hover:bg-gray-100 border border-gray-200'
               )}
             >
               {f}
@@ -44,25 +48,30 @@ export default function Galeria() {
           ))}
         </div>
 
-        {/* Masonry / Grid Gallery */}
+        {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-20">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {(activeFilter === 'Antes & Después' ? IMG.gallery : filtered).map((item, i) => (
             <div key={i} className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-white shadow-sm hover:shadow-xl transition-shadow cursor-pointer">
-              <PlaceholderImage theme={i % 2 === 0 ? 'teal' : 'orange'} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-2xl" />
-              
+              <img
+                src={item.src}
+                alt={`${item.breed} – ${item.service} en Mr. Groomer`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+              />
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <div className="flex flex-wrap gap-2 mb-3">
                   <span className="bg-white/20 backdrop-blur-md text-white text-xs font-medium px-3 py-1 rounded-full border border-white/30">
-                    {['Golden Retriever', 'Schnauzer', 'Gato Persa', 'Poodle'][i % 4]}
+                    {item.breed}
                   </span>
                   <span className="bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                    {['Servicio Completo', 'Baño Medicado', 'Limado de Uñas', 'Baño Cosmético'][i % 4]}
+                    {item.service}
                   </span>
                 </div>
                 <p className="text-white text-sm font-light">
                   Estilista: José Joaquín<br />
-                  <span className="text-white/70 text-xs">Ayer</span>
+                  <span className="text-white/70 text-xs">Mr. Groomer</span>
                 </p>
               </div>
             </div>
@@ -77,16 +86,28 @@ export default function Galeria() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="flex flex-col gap-4">
-                <BeforeAfterSlider 
-                  beforeImage={<PlaceholderImage theme="light-teal" className="rounded-none h-full" />}
-                  afterImage={<PlaceholderImage theme="teal" className="rounded-none h-full" />}
+            {IMG.beforeAfter.map((pair, i) => (
+              <div key={i} className="flex flex-col gap-4">
+                <BeforeAfterSlider
+                  beforeImage={
+                    <img
+                      src={pair.before}
+                      alt={`${pair.name} antes del grooming`}
+                      className="w-full h-full object-cover"
+                    />
+                  }
+                  afterImage={
+                    <img
+                      src={pair.after}
+                      alt={`${pair.name} después del grooming`}
+                      className="w-full h-full object-cover"
+                    />
+                  }
                 />
                 <div className="text-center">
-                  <h4 className="font-bold text-brand-dark-teal">{['Max (Schnauzer)', 'Luna (Poodle)', 'Simba (Gato)'][item-1]}</h4>
+                  <h4 className="font-bold text-brand-dark-teal">{pair.name}</h4>
                   <p className="text-sm border text-brand-orange border-brand-orange/30 bg-brand-orange/5 px-3 py-1 rounded-full inline-block mt-2">
-                    {['Corte Especializado', 'Baño y Deslanado', 'Baño Felino'][item-1]}
+                    {pair.service}
                   </p>
                 </div>
               </div>

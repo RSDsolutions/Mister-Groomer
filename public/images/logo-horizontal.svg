@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" fill="none">
+  <!-- Icon circle -->
+  <circle cx="40" cy="40" r="40" fill="#F5A623"/>
+  <!-- White paw print -->
+  <ellipse cx="40" cy="53" rx="15" ry="12" fill="white"/>
+  <circle cx="23" cy="36" r="7" fill="white"/>
+  <circle cx="40" cy="28" r="8" fill="white"/>
+  <circle cx="57" cy="36" r="7" fill="white"/>
+  <line x1="32" y1="49" x2="32" y2="57" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="40" y1="47" x2="40" y2="58" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="48" y1="49" x2="48" y2="57" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Brand name -->
+  <text x="94" y="36" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="22" fill="#085041">Mister Groomer</text>
+  <!-- Tagline -->
+  <text x="94" y="56" font-family="Poppins,Arial,sans-serif" font-style="italic" font-size="13" fill="#6B7280">Your trusted stylist</text>
+</svg>
