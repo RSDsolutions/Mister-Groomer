@@ -1,0 +1,137 @@
+import { Link } from 'react-router-dom';
+import HeroBubbles from '../components/HeroBubbles';
+import PlaceholderImage from '../components/PlaceholderImage';
+import { Award, Heart, Users, CheckCircle2 } from 'lucide-react';
+
+export default function Nosotros() {
+  return (
+    <div className="animate-in fade-in duration-500 bg-white">
+      {/* Hero Mini with Bubbles */}
+      <div className="bg-brand-teal pt-16 pb-20 px-4 relative overflow-hidden">
+        <HeroBubbles />
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <p className="text-brand-light-teal/80 text-sm font-medium mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link> &nbsp;›&nbsp; Nosotros
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Nuestra Historia</h1>
+          <p className="text-brand-light-teal max-w-2xl mx-auto text-lg sm:text-xl font-light">
+            De las peluquerías VIP de Quito a tu barrio. Conoce la pasión detrás de Mr. Groomer.
+          </p>
+        </div>
+      </div>
+
+      {/* Story Section */}
+      <div className="max-w-7xl mx-auto px-4 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+            <PlaceholderImage theme="orange" className="w-full h-full object-cover rounded-none" />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+              <p className="text-white font-bold text-xl">José Joaquín Toledo</p>
+              <p className="text-brand-light-teal text-sm">Fundador & Head Groomer</p>
+            </div>
+          </div>
+          
+          <div>
+            <span className="text-brand-orange font-bold tracking-widest uppercase text-sm mb-2 block">Un Emprendimiento Familiar</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-6 leading-tight">
+              Años de experiencia premium, ahora en Conocoto.
+            </h2>
+            <div className="prose prose-lg text-brand-muted mb-8">
+              <p>
+                Mr. Groomer nace del corazón y la dedicación. Tras trabajar durante más de 9 años como estilista canino y felino 
+                en algunas de las peluquerías más prestigiosas y de nivel VIP en el norte de Quito, decidí emprender 
+                junto a mi familia.
+              </p>
+              <p>
+                La idea era simple pero poderosa: traer ese mismo nivel de exigencia, técnica refinada y uso de productos de altísima gama, 
+                pero con un trato cercano y cálido, directo a nuestro propio sector en Conocoto.
+              </p>
+              <p>
+                Creemos que el grooming no es solo estética; es salud, es prevención y es una demostración de amor. Cada mascota que 
+                entra a nuestro local se convierte en un miembro más de la familia Mr. Groomer.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
+              <div className="flex gap-4 items-center">
+                <div className="bg-brand-light-teal p-3 rounded-xl text-brand-teal"><Award className="w-6 h-6" /></div>
+                <div>
+                  <h4 className="font-bold text-brand-dark text-xl">9+</h4>
+                  <p className="text-xs text-brand-muted uppercase font-semibold tracking-wider">Años Exp.</p>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="bg-brand-orange/10 p-3 rounded-xl text-brand-orange"><Heart className="w-6 h-6" /></div>
+                <div>
+                  <h4 className="font-bold text-brand-dark text-xl">100%</h4>
+                  <p className="text-xs text-brand-muted uppercase font-semibold tracking-wider">Compromiso</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Values & Timeline Context */}
+      <div className="bg-[#FAFAFA] py-24 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          
+          {/* Mission & Vision */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            <div className="bg-brand-dark-teal rounded-3xl p-10 lg:p-12 text-white shadow-xl transform transition-transform hover:-translate-y-2">
+              <h3 className="text-2xl font-bold bg-white/10 w-max px-4 py-1.5 rounded-full mb-6">Misión</h3>
+              <p className="text-xl sm:text-2xl font-light leading-relaxed">
+                "Mantener lindas, sanas y felices a las mascotas de nuestros clientes mediante servicios de estética animal de primer nivel, en un ambiente amigable y seguro."
+              </p>
+            </div>
+            <div className="bg-brand-orange rounded-3xl p-10 lg:p-12 text-white shadow-xl transform transition-transform hover:-translate-y-2">
+              <h3 className="text-2xl font-bold bg-white/20 w-max px-4 py-1.5 rounded-full mb-6 text-brand-dark-teal">Visión</h3>
+              <p className="text-xl sm:text-2xl font-medium leading-relaxed text-brand-dark-teal">
+                "Ser la peluquería canina y felina de referencia en el Valle de los Chillos, reconocidos por nuestra calidad VIP, técnica impecable y amor por los animales."
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-4">Nuestra Trayectoria</h2>
+            <p className="text-brand-muted max-w-2xl mx-auto">El camino que nos trajo hasta hoy.</p>
+          </div>
+
+          {/* Timeline */}
+          <div className="max-w-3xl mx-auto relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-brand-light-teal">
+            {[
+              { year: '2015', title: 'El Inicio de la Pasión', desc: 'Comienzo de formación profesional y trabajo en peluquerías locales de alto nivel.' },
+              { year: '2018', title: 'Especialización y VIP', desc: 'Consolidación de técnicas modernas, tijeras japonesas y manejo avanzado de razas específicas en salones VIP al norte de la ciudad.' },
+              { year: '2022', title: 'Concepción de la Idea', desc: 'Nace la visión de crear un servicio independiente, familiar pero con estándares corporativos.' },
+              { year: '2025', title: 'Nace Mr. Groomer', desc: 'Apertura de nuestro primer local propio en Conocoto, brindando cercanía y excelencia a nuestro barrio.' },
+            ].map((step, i) => (
+              <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-12 last:mb-0">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-orange text-white text-xs font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow flex-col z-10">
+                  <CheckCircle2 className="w-5 h-5 absolute" />
+                </div>
+                
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-teal/30 transition-colors">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-brand-orange text-xl">{step.year}</span>
+                  </div>
+                  <h4 className="font-bold text-brand-dark-teal text-lg mb-2">{step.title}</h4>
+                  <p className="text-brand-muted text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+      {/* CTA final */}
+      <div className="py-20 text-center max-w-4xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-brand-dark-teal mb-6">¿Quieres ser parte de la familia Mr. Groomer?</h2>
+        <p className="text-brand-muted mb-8 text-lg">Confía la estética de tu mejor amigo a manos expertas.</p>
+        <Link to="/reservar" className="inline-flex items-center gap-2 bg-brand-teal hover:bg-brand-dark-teal text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:-translate-y-1">
+          Agendar Cita Hoy
+        </Link>
+      </div>
+    </div>
+  );
+}
