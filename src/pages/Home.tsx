@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-teal to-brand-dark-teal text-white overflow-hidden py-24 sm:py-32">
+      <section className="relative bg-gradient-to-br from-[#041810] via-brand-dark-teal to-[#1A7A5A] text-white overflow-hidden py-24 sm:py-32">
         <HeroBubbles />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -20,8 +20,8 @@ export default function Home() {
                 El Estilista de <span className="text-brand-orange">Confianza</span> de tu Mascota
               </h1>
               <p className="text-lg sm:text-xl text-brand-light-teal mb-8 max-w-2xl mx-auto lg:mx-0">
-                Peluquería Canina y Felina en Conocoto por José Joaquín Toledo.
-                Más de 9 años de experiencia nivel VIP de Quito, ahora en tu barrio.
+                Peluquería Canina y Felina en el Valle de Los Chillos por José Joaquín Toledo.
+                Más de 9 años de experiencia nivel Premium de Quito, ahora en tu barrio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/reservar" className="bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
@@ -55,7 +55,7 @@ export default function Home() {
               <Heart className="w-5 h-5 text-brand-teal" /> Caninos & Felinos
             </div>
             <div className="bg-brand-light-teal text-brand-dark-teal px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-brand-teal" /> Conocoto, Quito
+              <CheckCircle2 className="w-5 h-5 text-brand-teal" /> Valle de Los Chillos
             </div>
           </div>
         </div>
@@ -69,12 +69,13 @@ export default function Home() {
             <p className="text-brand-muted max-w-2xl mx-auto">Tratamientos completos para la salud y belleza de tu mejor amigo.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {[
               { title: 'Servicio Completo', desc: 'Baño, corte, secado y más.', icon: '🛁' },
               { title: 'Baño Cosmético', desc: 'Limpieza profunda y cepillado.', icon: '✨' },
               { title: 'Baño Medicado', desc: 'Para dermatitis y piel sensible.', icon: '💊' },
               { title: 'Corte de Uñas', desc: 'Limado seguro.', icon: '✂️' },
+              { title: 'Paseos Caninos', desc: 'Ejercicio y socialización supervisada.', icon: '🦮' },
             ].map((srv, i) => (
               <div key={i} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-all hover:-translate-y-2 group">
                 <div className="text-4xl mb-4 bg-brand-light-teal w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">{srv.icon}</div>
@@ -109,7 +110,7 @@ export default function Home() {
 
               <ul className="space-y-4 mb-8">
                 {[
-                  'Experiencia VIP',
+                  'Experiencia Premium',
                   'Trato personalizado',
                   'Resultados que enamoran',
                 ].map((item, i) => (

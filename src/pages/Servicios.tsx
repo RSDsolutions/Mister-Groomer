@@ -6,8 +6,8 @@ const SERVICES = [
     id: 1,
     title: 'Servicio Completo',
     icon: '🛁',
-    price: 'Desde $15',
-    desc: 'Un spa relajante para que tu mascota quede impecable y libre de estrés.',
+    price: 'Desde $17',
+    desc: 'Un spa relajante para que tu mascota quede impecable y libre de estrés. Precio base para mascotas pequeñas (hasta 30 cm de altura o menos de 20 lbs).',
     includes: [
       'Baño con agua tibia',
       'Shampoo premium',
@@ -55,12 +55,25 @@ const SERVICES = [
       'Limado para evitar astillas',
       'Revisión general de las almohadillas'
     ]
+  },
+  {
+    id: 5,
+    title: 'Paseos Caninos',
+    icon: '🦮',
+    price: 'Desde $4/hr/mascota',
+    desc: 'Ejercicio, socialización y diversión para tu perro bajo supervisión profesional.',
+    includes: [
+      'Paseo supervisado en área segura',
+      'Socialización con otros perros',
+      'Reporte de comportamiento',
+      'Hidratación durante el recorrido'
+    ]
   }
 ];
 
 const FAQS = [
   { q: '¿Cuánto dura el servicio?', a: 'Depende de la raza y estado del pelaje, pero normalmente un servicio completo toma entre 1.5 a 2 horas.' },
-  { q: '¿Necesito cita previa?', a: 'Sí, trabajamos exclusivamente con cita previa para garantizar la atención VIP y libre de estrés que tu mascota merece.' },
+  { q: '¿Necesito cita previa?', a: 'Sí, trabajamos exclusivamente con cita previa para garantizar la atención Premium y libre de estrés que tu mascota merece.' },
   { q: '¿Atienden cachorros?', a: '¡Claro! Adaptamos un plan de iniciación al grooming muy suave para que tengan una primera experiencia positiva.' },
   { q: '¿Qué productos usan?', a: 'Utilizamos champús cosméticos hipoalergénicos de alta calidad y productos veterinarios premium certificados.' },
   { q: '¿Atienden razas grandes?', a: 'Sí, estamos equipados y tenemos experiencia en manejo de razas grandes con cariño y paciencia.' }

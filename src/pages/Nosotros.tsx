@@ -15,7 +15,7 @@ export default function Nosotros() {
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Nuestra Historia</h1>
           <p className="text-brand-light-teal max-w-2xl mx-auto text-lg sm:text-xl font-light">
-            De las peluquerías VIP de Quito a tu barrio. Conoce la pasión detrás de Mr. Groomer.
+            De las peluquerías Premium de Quito a tu barrio. Conoce la pasión detrás de Mr. Groomer.
           </p>
         </div>
       </div>
@@ -38,17 +38,17 @@ export default function Nosotros() {
           <div>
             <span className="text-brand-orange font-bold tracking-widest uppercase text-sm mb-2 block">Un Emprendimiento Familiar</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-6 leading-tight">
-              Años de experiencia premium, ahora en Conocoto.
+              Años de experiencia premium, ahora en el Valle de Los Chillos.
             </h2>
             <div className="prose prose-lg text-brand-muted mb-8">
               <p>
                 Mr. Groomer nace del corazón y la dedicación. Tras trabajar durante más de 9 años como estilista canino y felino
-                en algunas de las peluquerías más prestigiosas y de nivel VIP en el norte de Quito, decidí emprender
+                en algunas de las peluquerías más prestigiosas y de nivel Premium en el norte de Quito, decidí emprender
                 junto a mi familia.
               </p>
               <p>
                 La idea era simple pero poderosa: traer ese mismo nivel de exigencia, técnica refinada y uso de productos de altísima gama,
-                pero con un trato cercano y cálido, directo a nuestro propio sector en Conocoto.
+                pero con un trato cercano y cálido, directo a nuestro propio sector en el Valle de Los Chillos.
               </p>
               <p>
                 Creemos que el grooming no es solo estética; es salud, es prevención y es una demostración de amor. Cada mascota que
@@ -91,7 +91,7 @@ export default function Nosotros() {
             <div className="bg-brand-orange rounded-3xl p-10 lg:p-12 text-white shadow-xl transform transition-transform hover:-translate-y-2">
               <h3 className="text-2xl font-bold bg-white/20 w-max px-4 py-1.5 rounded-full mb-6 text-brand-dark-teal">Visión</h3>
               <p className="text-xl sm:text-2xl font-medium leading-relaxed text-brand-dark-teal">
-                "Ser la peluquería canina y felina de referencia en el Valle de los Chillos, reconocidos por nuestra calidad VIP, técnica impecable y amor por los animales."
+                "Ser la peluquería canina y felina de referencia en el Valle de los Chillos, reconocidos por nuestra calidad Premium, técnica impecable y amor por los animales."
               </p>
             </div>
           </div>
@@ -105,9 +105,9 @@ export default function Nosotros() {
           <div className="max-w-3xl mx-auto relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-brand-light-teal">
             {[
               { year: '2015', title: 'El Inicio de la Pasión', desc: 'Comienzo de formación profesional y trabajo en peluquerías locales de alto nivel.' },
-              { year: '2018', title: 'Especialización y VIP', desc: 'Consolidación de técnicas modernas, tijeras japonesas y manejo avanzado de razas específicas en salones VIP al norte de la ciudad.' },
+              { year: '2018', title: 'Especialización Premium', desc: 'Consolidación de técnicas modernas, tijeras japonesas y manejo avanzado de razas específicas en salones Premium al norte de la ciudad.' },
               { year: '2022', title: 'Concepción de la Idea', desc: 'Nace la visión de crear un servicio independiente, familiar pero con estándares corporativos.' },
-              { year: '2025', title: 'Nace Mr. Groomer', desc: 'Apertura de nuestro primer local propio en Conocoto, brindando cercanía y excelencia a nuestro barrio.' },
+              { year: '2025', title: 'Nace Mr. Groomer', desc: 'Apertura de nuestro primer local propio en el Valle de Los Chillos, brindando cercanía y excelencia a nuestro sector.' },
             ].map((step, i) => (
               <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-12 last:mb-0">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-orange text-white text-xs font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow flex-col z-10">
