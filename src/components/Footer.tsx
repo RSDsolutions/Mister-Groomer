@@ -17,16 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Col */}
           <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
-            <Link to="/" className="flex items-center gap-2 group">
+            <Link to="/" className="group">
               <img
-                src="/images/logo.svg"
-                alt="Mr. Groomer"
-                className="w-12 h-12 group-hover:scale-105 transition-transform"
+                src="/images/Logo-MG.png"
+                alt="Mister Groomer"
+                className="h-20 w-auto group-hover:scale-105 transition-transform rounded-xl"
               />
-              <div className="flex flex-col">
-                <span className="font-bold text-2xl leading-none text-white">Mister Groomer</span>
-                <span className="text-xs italic text-brand-light-teal opacity-80">Your trusted stylist</span>
-              </div>
             </Link>
             <p className="text-brand-light-teal text-sm mt-2">
               Mantenemos Lindas, Sanas y Felices a sus Mascotas.

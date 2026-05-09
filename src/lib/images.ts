@@ -1,84 +1,71 @@
-const CDN = 'https://images.unsplash.com/photo-';
-const OPT = '?auto=format&fit=crop&q=80';
-
-const u = (id: string, w = 800) => `${CDN}${id}${OPT}&w=${w}`;
+// Todas las rutas apuntan a archivos locales en public/images/
+// Las fotos 01-16 son resultados reales del salón Mr. Groomer
 
 export const IMG = {
-  logo: '/images/logo.svg',
+  logo:           '/images/Logo-MG.png',
   logoHorizontal: '/images/logo-horizontal.svg',
+  logoPaw:        '/images/logo.svg',
 
-  // Hero principal
-  hero: u('1587300003388-59208cc962cb', 1200),
+  // Hero principal — Goldendoodle feliz (foto 05)
+  hero: '/images/grooming-05.jpg',
 
-  // Sección About / Home teaser
-  aboutTeaser: u('1601758124510-52d02ddb7cbd', 900),
+  // About teaser Home — groomer en acción (foto 14)
+  aboutTeaser: '/images/grooming-14.jpg',
 
-  // Fundador / Nosotros
-  founder: u('1583337130417-3346a1be7dee', 900),
+  // Nosotros / Fundador — groomer trabajando (foto 14)
+  founder: '/images/grooming-14.jpg',
 
-  // Galería — 12 resultados de cortes
+  // ── Galería — 15 fotos reales del salón ───────────────────────────────────
   gallery: [
-    { src: u('1587300003388-59208cc962cb', 600), breed: 'Pomeranian', service: 'Servicio Completo', type: 'Perros' },
-    { src: u('1543466835-00a7907e9de1',   600), breed: 'Cachorro Mix',      service: 'Baño Cosmético',      type: 'Perros' },
-    { src: u('1518717758536-85ae29035b6d', 600), breed: 'Golden Retriever',  service: 'Deslanado',           type: 'Golden' },
-    { src: u('1560807707-8cc77767d783',   600), breed: 'Labrador',          service: 'Baño Medicado',       type: 'Perros' },
-    { src: u('1601758124510-52d02ddb7cbd', 600), breed: 'Schnauzer',         service: 'Corte Especializado', type: 'Schnauzer' },
-    { src: u('1514888286974-6c03e2ca1dba', 600), breed: 'Gato Persa',        service: 'Baño Felino',         type: 'Gatos' },
-    { src: u('1574158622682-e719686a4bf8', 600), breed: 'Gato Angora',       service: 'Servicio Completo',   type: 'Gatos' },
-    { src: u('1513360371669-4adf3dd7dff8', 600), breed: 'Gato Doméstico',    service: 'Baño Cosmético',      type: 'Gatos' },
-    { src: u('1583337130417-3346a1be7dee', 600), breed: 'Poodle',            service: 'Corte Poodle',        type: 'Poodle' },
-    { src: u('1589941013453-7a734c1a0208', 600), breed: 'Yorkshire',         service: 'Servicio Completo',   type: 'Otros' },
-    { src: u('1552053831-71594a27632d',   600), breed: 'Golden Retriever',  service: 'Baño y Peinado',      type: 'Golden' },
-    { src: u('1548199973-03cce0bbc87b',   600), breed: 'Mix Mediano',        service: 'Servicio Completo',   type: 'Otros' },
+    { src: '/images/grooming-01.jpg', breed: 'Pomeranian',             service: 'Servicio Completo',    type: 'Perros'    },
+    { src: '/images/grooming-02.jpg', breed: 'Bernedoodle',            service: 'Corte Especializado',  type: 'Perros'    },
+    { src: '/images/grooming-03.jpg', breed: 'Lhasa Apso',             service: 'Servicio Completo',    type: 'Perros'    },
+    { src: '/images/grooming-04.jpg', breed: 'Maltés',                 service: 'Baño Cosmético',       type: 'Perros'    },
+    { src: '/images/grooming-05.jpg', breed: 'Goldendoodle',           service: 'Servicio Completo',    type: 'Perros'    },
+    { src: '/images/grooming-06.jpg', breed: 'Rough Collie',           service: 'Baño y Cepillado',     type: 'Perros'    },
+    { src: '/images/grooming-07.jpg', breed: 'Husky Siberiano',        service: 'Deslanado',            type: 'Perros'    },
+    { src: '/images/grooming-08.jpg', breed: 'Shih Tzu',               service: 'Corte Especializado',  type: 'Otros'     },
+    { src: '/images/grooming-09.jpg', breed: 'Schnauzer',              service: 'Corte Schnauzer',      type: 'Schnauzer' },
+    { src: '/images/grooming-10.jpg', breed: 'Maltés',                 service: 'Servicio Completo',    type: 'Perros'    },
+    { src: '/images/grooming-11.jpg', breed: 'Bichón Frisé',           service: 'Corte Poodle',         type: 'Poodle'    },
+    { src: '/images/grooming-12.jpg', breed: 'Poodle Canela',          service: 'Corte Poodle',         type: 'Poodle'    },
+    { src: '/images/grooming-13.jpg', breed: 'Lhasa Apso',             service: 'Baño Cosmético',       type: 'Perros'    },
+    { src: '/images/grooming-15.jpg', breed: 'West Highland Terrier',  service: 'Servicio Completo',    type: 'Perros'    },
+    { src: '/images/grooming-16.jpg', breed: 'Gato Ruso Azul',         service: 'Baño Felino',          type: 'Gatos'     },
   ],
 
-  // Antes & Después — 3 pares
+  // ── Antes & Después — 3 pares usando fotos del salón ────────────────────
   beforeAfter: [
-    {
-      before:  u('1560807707-8cc77767d783',   700),
-      after:   u('1587300003388-59208cc962cb', 700),
-      name:    'Max (Schnauzer)',
-      service: 'Corte Especializado',
-    },
-    {
-      before:  u('1548199973-03cce0bbc87b',   700),
-      after:   u('1518717758536-85ae29035b6d', 700),
-      name:    'Luna (Poodle)',
-      service: 'Baño y Deslanado',
-    },
-    {
-      before:  u('1513360371669-4adf3dd7dff8', 700),
-      after:   u('1514888286974-6c03e2ca1dba', 700),
-      name:    'Simba (Gato)',
-      service: 'Baño Felino',
-    },
+    { before: '/images/grooming-06.jpg', after: '/images/grooming-09.jpg', name: 'Schnauzer',       service: 'Corte Especializado' },
+    { before: '/images/grooming-08.jpg', after: '/images/grooming-03.jpg', name: 'Lhasa Apso',      service: 'Baño y Corte'        },
+    { before: '/images/grooming-13.jpg', after: '/images/grooming-11.jpg', name: 'Bichón Frisé',    service: 'Corte Completo'      },
   ],
 
-  // Carrusel horizontal en Home (3 imágenes)
+  // ── Carrusel horizontal en Home (3 fotos) ──────────────────────────────
   galleryTeaser: [
-    u('1587300003388-59208cc962cb', 600),
-    u('1518717758536-85ae29035b6d', 600),
-    u('1514888286974-6c03e2ca1dba', 600),
+    '/images/grooming-01.jpg',
+    '/images/grooming-12.jpg',
+    '/images/grooming-16.jpg',
   ],
 
-  // Blog — índice 0 = destacado, 1-6 = posts del grid
+  // ── Blog — índice 0 = destacado, 1-6 = posts del grid ─────────────────
   blog: [
-    u('1589941013453-7a734c1a0208', 1000), // destacado: frecuencia de baño
-    u('1513360371669-4adf3dd7dff8', 700),  // gato baño medicado
-    u('1560807707-8cc77767d783',   700),   // elección de shampoo
-    u('1587300003388-59208cc962cb', 700),   // cuidado de uñas
-    u('1518717758536-85ae29035b6d', 700),   // Schnauzer vs Golden
-    u('1543466835-00a7907e9de1',   700),   // primer baño cachorro
-    u('1601758124510-52d02ddb7cbd', 700),   // extra / sidebar
+    '/images/grooming-05.jpg',  // destacado: frecuencia de baño
+    '/images/grooming-16.jpg',  // baño medicado felinos
+    '/images/grooming-09.jpg',  // elección de shampoo (Schnauzer)
+    '/images/grooming-01.jpg',  // cuidado de uñas (Pomeranian)
+    '/images/grooming-07.jpg',  // Schnauzer vs Golden (Husky)
+    '/images/grooming-04.jpg',  // primer baño cachorro (Maltés)
+    '/images/grooming-02.jpg',  // artículo relacionado sidebar
   ],
 
-  // Tienda — 6 productos de grooming
+  // ── Tienda — 6 productos con foto referencial ──────────────────────────
   products: [
-    u('1548199973-03cce0bbc87b',   500),  // shampoo hipoalergénico
-    u('1518717758536-85ae29035b6d', 500), // acondicionador
-    u('1587300003388-59208cc962cb', 500), // colonia / perfume
-    u('1514888286974-6c03e2ca1dba', 500), // limpiador de oídos
-    u('1543466835-00a7907e9de1',   500),  // cepillo carda
-    u('1560807707-8cc77767d783',   500),  // cortaúñas
+    '/images/grooming-01.jpg',  // shampoo hipoalergénico
+    '/images/grooming-03.jpg',  // acondicionador
+    '/images/grooming-05.jpg',  // colonia
+    '/images/grooming-16.jpg',  // limpiador de oídos
+    '/images/grooming-09.jpg',  // cepillo carda
+    '/images/grooming-11.jpg',  // cortaúñas
   ],
 };
