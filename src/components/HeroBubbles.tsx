@@ -5,7 +5,7 @@ export default function HeroBubbles() {
   const [paws, setPaws] = useState<any[]>([]);
 
   useEffect(() => {
-    const newPaws = Array.from({ length: 18 }).map((_, i) => ({
+    const newPaws = Array.from({ length: 35 }).map((_, i) => ({
       id: i,
       size: Math.random() * 42 + 14,
       left: Math.random() * 100,
