@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#041810] via-brand-dark-teal to-[#1A7A5A] text-white overflow-hidden py-24 sm:py-32">
+      <section className="relative bg-gradient-to-br from-[#1a2e3d] via-brand-teal to-[#2d5a72] text-white overflow-hidden py-24 sm:py-32">
         <HeroBubbles />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
