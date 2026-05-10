@@ -12,9 +12,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-4">
                 <Star className="w-4 h-4 text-brand-orange fill-brand-orange" />
                 <span>Mantenemos Lindas, Sanas y Felices a sus Mascotas</span>
+              </div>
+              <div className="block lg:hidden mb-4">
+                <img
+                  src={IMG.hero}
+                  alt="Perros divirtiéndose en el baño en Mr. Groomer"
+                  className="h-48 w-auto mx-auto object-contain drop-shadow-xl mix-blend-multiply"
+                />
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 El Estilista de <span className="text-brand-orange">Confianza</span> de tu Mascota
