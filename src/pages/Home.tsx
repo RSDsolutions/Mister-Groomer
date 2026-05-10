@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1a2e3d] via-brand-teal to-[#2d5a72] text-white overflow-hidden py-24 sm:py-32">
+      <section className="relative bg-gradient-to-br from-[#1d3a4f] via-brand-dark-teal to-brand-teal text-white overflow-hidden py-24 sm:py-32">
         <HeroBubbles />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -32,12 +32,11 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:block relative h-[500px]">
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-full blur-3xl transform scale-90"></div>
+            <div className="hidden lg:flex relative h-[520px] items-end justify-center">
               <img
                 src={IMG.hero}
-                alt="Mascota feliz después del grooming en Mr. Groomer"
-                className="h-full w-full object-cover rounded-3xl shadow-2xl relative z-10"
+                alt="Perros divirtiéndose en el baño en Mr. Groomer"
+                className="h-full w-full object-contain drop-shadow-2xl relative z-10 mix-blend-multiply"
               />
             </div>
           </div>

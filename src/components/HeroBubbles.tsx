@@ -7,13 +7,13 @@ export default function HeroBubbles() {
   useEffect(() => {
     const newPaws = Array.from({ length: 35 }).map((_, i) => ({
       id: i,
-      size: Math.random() * 42 + 14,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
+      size: Math.random() * 28 + 12,
+      left: Math.random() * 88 + 4,
+      top: Math.random() * 82 + 4,
       delay: Math.random() * -10,
       duration: Math.random() * 8 + 8,
       rotate: Math.random() * 360,
-      opacity: Math.random() * 0.14 + 0.07,
+      opacity: Math.random() * 0.13 + 0.06,
     }));
     setPaws(newPaws);
   }, []);
