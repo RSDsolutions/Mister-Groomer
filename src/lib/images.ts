@@ -7,7 +7,7 @@ export const IMG = {
   logoPaw:        '/images/logo.svg',
 
   // Hero principal — ilustración cartoon perros en bañera
-  hero: '/images/hero-dogs.png',
+  hero: '/images/hero-dogs.jpg',
 
   // About teaser Home — groomer en acción (foto 14)
   aboutTeaser: '/images/grooming-14.jpg',
