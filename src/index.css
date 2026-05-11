@@ -29,3 +29,29 @@ body {
   33% { transform: translateY(-15px) translateX(10px) scale(1.02); }
   66% { transform: translateY(10px) translateX(-10px) scale(0.98); }
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes float-sticker {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.animate-float-sticker {
+  animation: float-sticker 3s ease-in-out infinite;
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}

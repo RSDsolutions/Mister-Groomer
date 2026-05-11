@@ -21,7 +21,7 @@ const SERVICES = [
     id: 2,
     title: 'Baño Cosmético',
     icon: '✨',
-    price: 'Desde $10',
+    price: 'Desde $12',
     desc: 'Ideal para el mantenimiento regular entre cortes.',
     includes: [
       'Shampoo y acondicionador cosmético',
@@ -35,7 +35,7 @@ const SERVICES = [
     id: 3,
     title: 'Baño Medicado',
     icon: '💊',
-    price: 'Desde $12',
+    price: 'Desde $15',
     desc: 'Tratamiento especializado para problemas de piel.',
     includes: [
       'Shampoo medicado dermatológico',
@@ -48,7 +48,7 @@ const SERVICES = [
     id: 4,
     title: 'Corte y Limado de Uñas',
     icon: '✂️',
-    price: 'Desde $5',
+    price: 'Desde $3',
     desc: 'Cuidado esencial para su comodidad al caminar y prevenir accidentes.',
     includes: [
       'Corte seguro y preciso',

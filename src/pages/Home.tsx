@@ -31,7 +31,8 @@ export default function Home() {
                 Más de 9 años de experiencia nivel Premium de Quito, ahora en tu barrio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to="/reservar" className="bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
+                <Link to="/reservar" className="bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 relative">
+                  <span className="absolute inset-0 rounded-full bg-brand-orange animate-ping opacity-20 pointer-events-none"></span>
                   Agendar Cita
                 </Link>
                 <Link to="/servicios" className="bg-transparent border border-white hover:bg-white hover:text-brand-dark-teal text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2">
@@ -50,26 +51,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Fun Marquee Ticker */}
+      <div className="bg-brand-orange overflow-hidden py-3 select-none">
+        <div className="animate-marquee">
+          <div className="flex items-center whitespace-nowrap px-8 text-white font-bold text-sm gap-6">
+            <span>🐾 Mr. Groomer</span><span className="opacity-40 mx-1">✦</span>
+            <span>🐕 Peluquería Canina & Felina</span><span className="opacity-40 mx-1">✦</span>
+            <span>⭐ 9+ Años de Experiencia Premium</span><span className="opacity-40 mx-1">✦</span>
+            <span>🛁 Baño Profesional</span><span className="opacity-40 mx-1">✦</span>
+            <span>📍 Valle de Los Chillos</span><span className="opacity-40 mx-1">✦</span>
+            <span>💛 Tu Mascota lo Merece</span><span className="opacity-40 mx-1">✦</span>
+            <span>🎀 Resultados que Enamoran</span><span className="opacity-40 mx-1">✦</span>
+            <span>🐈 ¡También Atendemos Gatos!</span><span className="opacity-40 mx-1">✦</span>&nbsp;&nbsp;
+          </div>
+          <div className="flex items-center whitespace-nowrap px-8 text-white font-bold text-sm gap-6" aria-hidden="true">
+            <span>🐾 Mr. Groomer</span><span className="opacity-40 mx-1">✦</span>
+            <span>🐕 Peluquería Canina & Felina</span><span className="opacity-40 mx-1">✦</span>
+            <span>⭐ 9+ Años de Experiencia Premium</span><span className="opacity-40 mx-1">✦</span>
+            <span>🛁 Baño Profesional</span><span className="opacity-40 mx-1">✦</span>
+            <span>📍 Valle de Los Chillos</span><span className="opacity-40 mx-1">✦</span>
+            <span>💛 Tu Mascota lo Merece</span><span className="opacity-40 mx-1">✦</span>
+            <span>🎀 Resultados que Enamoran</span><span className="opacity-40 mx-1">✦</span>
+            <span>🐈 ¡También Atendemos Gatos!</span><span className="opacity-40 mx-1">✦</span>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+
       {/* Stats Bar */}
       <section className="py-8 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 gap-y-4">
-            <div className="bg-brand-light-teal text-brand-dark-teal px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm">
-              <Star className="w-5 h-5 text-brand-teal" /> 9+ Años de Experiencia
+            <div className="bg-brand-orange/15 border border-brand-orange/25 text-brand-orange-dark px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm hover:-translate-y-1 transition-transform cursor-default">
+              <Star className="w-5 h-5 text-brand-orange fill-brand-orange/70" /> 9+ Años de Experiencia
             </div>
-            <div className="bg-brand-light-teal text-brand-dark-teal px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm">
-              <Heart className="w-5 h-5 text-brand-teal" /> Caninos & Felinos
+            <div className="bg-pink-50 border border-pink-200 text-pink-600 px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm hover:-translate-y-1 transition-transform cursor-default">
+              <Heart className="w-5 h-5 text-pink-500 fill-pink-300" /> Caninos & Felinos
             </div>
-            <div className="bg-brand-light-teal text-brand-dark-teal px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-brand-teal" /> Valle de Los Chillos
+            <div className="bg-emerald-50 border border-emerald-200 text-emerald-700 px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm hover:-translate-y-1 transition-transform cursor-default">
+              <CheckCircle2 className="w-5 h-5 text-emerald-500" /> Valle de Los Chillos
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-[#FAFAFA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-b from-white via-sky-50/40 to-brand-light-teal/20 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+          <span className="absolute top-10 right-8 text-7xl opacity-[0.04] rotate-12">🐾</span>
+          <span className="absolute bottom-12 left-8 text-7xl opacity-[0.04] -rotate-12">🐾</span>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-4">Servicios Disponibles</h2>
             <p className="text-brand-muted max-w-2xl mx-auto">Tratamientos completos para la salud y belleza de tu mejor amigo.</p>
@@ -84,7 +115,7 @@ export default function Home() {
               { title: 'Paseos Caninos', desc: 'Ejercicio y socialización supervisada.', icon: '🦮' },
             ].map((srv, i) => (
               <div key={i} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-all hover:-translate-y-2 group">
-                <div className="text-4xl mb-4 bg-brand-light-teal w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">{srv.icon}</div>
+                <div className="text-4xl mb-4 bg-brand-light-teal w-20 h-20 rounded-2xl flex items-center justify-center group-hover:scale-125 group-hover:-rotate-12 transition-all duration-300 shadow-sm">{srv.icon}</div>
                 <h3 className="text-xl font-bold mb-2 text-brand-dark">{srv.title}</h3>
                 <p className="text-brand-muted mb-6 text-sm">{srv.desc}</p>
                 <Link to="/servicios" className="text-brand-orange font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
@@ -97,6 +128,7 @@ export default function Home() {
       </section>
 
       {/* About Teaser */}
+
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -213,13 +245,20 @@ export default function Home() {
       </section>
 
       {/* Booking CTA Banner */}
-      <section className="bg-brand-dark-teal py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-brand-dark-teal py-20 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+          <span className="absolute top-5 left-8 text-5xl opacity-[0.08] animate-bounce" style={{animationDelay:'0.3s'}}>🐕</span>
+          <span className="absolute bottom-5 right-8 text-5xl opacity-[0.08] animate-bounce" style={{animationDelay:'0.9s'}}>🐈</span>
+          <span className="absolute top-1/2 left-4 -translate-y-1/2 text-9xl opacity-[0.04]">🐾</span>
+          <span className="absolute top-1/2 right-4 -translate-y-1/2 text-9xl opacity-[0.04]">🐾</span>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl sm:text-5xl font-bold text-white mb-8 leading-tight">
-            ¿Listo para darle lo mejor a tu mascota?
+            ¿Listo para darle lo mejor a tu mascota? <span className="inline-block animate-bounce">🐾</span>
           </h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="https://wa.me/593978751586" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3">
+            <a href="https://wa.me/593978751586" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 relative">
+              <span className="absolute inset-0 rounded-full bg-brand-orange animate-ping opacity-20 pointer-events-none"></span>
               <MessageCircle className="w-6 h-6" /> WhatsApp
             </a>
             <a href="tel:+593998937473" className="w-full sm:w-auto bg-white hover:bg-gray-100 text-brand-dark-teal px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3">
