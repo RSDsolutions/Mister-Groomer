@@ -18,21 +18,28 @@ body {
   background-color: #FAFAFA;
 }
 
+/* ═══════════════════════════════════════
+   FLOATING PAWS (hero background)
+═══════════════════════════════════════ */
 .paw {
   position: absolute;
   pointer-events: none;
   animation: float 8s infinite ease-in-out;
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) translateX(0) scale(1); }
-  33% { transform: translateY(-15px) translateX(10px) scale(1.02); }
-  66% { transform: translateY(10px) translateX(-10px) scale(0.98); }
+  33%       { transform: translateY(-15px) translateX(10px) scale(1.02); }
+  66%       { transform: translateY(10px) translateX(-10px) scale(0.98); }
 }
 
+/* ═══════════════════════════════════════
+   MARQUEE TICKER
+═══════════════════════════════════════ */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 
 .animate-marquee {
@@ -42,16 +49,108 @@ body {
   animation: marquee 38s linear infinite;
 }
 
-@keyframes float-sticker {
-  0%, 100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(-10px) rotate(5deg); }
+/* ═══════════════════════════════════════
+   HERO GRADIENT FLOW
+═══════════════════════════════════════ */
+.hero-bg {
+  background: linear-gradient(-45deg, #0d2233, #1d3a4f, #2c6a8a, #1a4a65, #0f2d40);
+  background-size: 400% 400%;
+  animation: gradientFlow 16s ease infinite;
 }
 
-.animate-float-sticker {
-  animation: float-sticker 3s ease-in-out infinite;
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
+
+/* ═══════════════════════════════════════
+   HERO ENTRANCE ANIMATIONS
+═══════════════════════════════════════ */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(30px); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+}
+
+.hero-badge    { animation: heroIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.hero-title    { animation: heroIn 1s  0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.hero-subtitle { animation: heroIn 1s  0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.hero-cta      { animation: heroIn 1s  0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.hero-image    { animation: heroIn 1.2s 0.2s  cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+/* ═══════════════════════════════════════
+   MORPHING BLOBS (hero background)
+═══════════════════════════════════════ */
+@keyframes morphBlob {
+  0%   { border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; transform: translateY(0)    scale(1); }
+  25%  { border-radius: 70% 30% 40% 60% / 40% 70% 30% 60%; transform: translateY(-18px) scale(1.06); }
+  50%  { border-radius: 30% 70% 70% 30% / 60% 40% 60% 40%; transform: translateY(10px)  scale(0.96); }
+  75%  { border-radius: 60% 40% 30% 70% / 30% 60% 40% 70%; transform: translateY(-8px)  scale(1.03); }
+  100% { border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; transform: translateY(0)    scale(1); }
+}
+
+.blob {
+  position: absolute;
+  pointer-events: none;
+  animation: morphBlob 12s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+[data-reveal="left"]  { transform: translateX(-50px); }
+[data-reveal="right"] { transform: translateX(50px); }
+[data-reveal="scale"] { transform: scale(0.85); opacity: 0; }
+[data-reveal="up"]    { transform: translateY(50px); }
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+[data-delay="400"] { transition-delay: 400ms; }
+[data-delay="500"] { transition-delay: 500ms; }
+[data-delay="600"] { transition-delay: 600ms; }
+[data-delay="700"] { transition-delay: 700ms; }
+[data-delay="800"] { transition-delay: 800ms; }
+
+/* ═══════════════════════════════════════
+   CARD 3-D LIFT
+═══════════════════════════════════════ */
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center bottom;
+}
+.card-lift:hover {
+  transform: translateY(-10px) rotateX(3deg);
+  box-shadow: 0 24px 48px -12px rgba(74, 125, 158, 0.18);
+}
+
+/* ═══════════════════════════════════════
+   MISC UTILITIES
+═══════════════════════════════════════ */
+@keyframes float-sticker {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50%       { transform: translateY(-10px) rotate(5deg); }
+}
+.animate-float-sticker { animation: float-sticker 3s ease-in-out infinite; }
 
 @keyframes progress {
   from { width: 0%; }
   to   { width: 100%; }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

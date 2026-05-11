@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown, Check, Info } from 'lucide-react';
+import { useReveal } from '../hooks/useReveal';
 
 const SERVICES = [
   {
@@ -80,8 +81,9 @@ const FAQS = [
 ];
 
 export default function Servicios() {
+  useReveal();
   return (
-    <div className="animate-in fade-in duration-500 bg-[#FAFAFA]">
+    <div className="bg-[#FAFAFA]">
       {/* Hero Mini */}
       <div className="bg-brand-teal pt-12 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
@@ -110,8 +112,8 @@ export default function Servicios() {
 
       {/* Services List */}
       <div className="max-w-4xl mx-auto px-4 py-20 space-y-8">
-        {SERVICES.map((srv) => (
-          <div key={srv.id} className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 items-start relative overflow-hidden group hover:shadow-md transition-shadow">
+        {SERVICES.map((srv, idx) => (
+          <div key={srv.id} data-reveal data-delay={String(idx * 100)} className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 items-start relative overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div className="absolute -right-10 -top-10 text-[150px] opacity-[0.03] rotate-12 group-hover:scale-110 transition-transform pointer-events-none">
               {srv.icon}
             </div>
@@ -154,12 +156,12 @@ export default function Servicios() {
       {/* FAQs */}
       <div className="bg-white py-20 px-4">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-reveal>
             <h2 className="text-3xl font-bold text-brand-dark-teal mb-4">Preguntas Frecuentes</h2>
           </div>
           <div className="space-y-4">
             {FAQS.map((faq, i) => (
-              <details key={i} className="group bg-[#FAFAFA] rounded-2xl [&_summary::-webkit-details-marker]:hidden">
+              <details key={i} data-reveal data-delay={String(i * 80)} className="group bg-[#FAFAFA] rounded-2xl [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-6 font-medium text-brand-dark">
                   <h3 className="font-semibold text-lg">{faq.q}</h3>
                   <span className="shrink-0 bg-white p-1.5 rounded-full shadow-sm group-open:-rotate-180 transition-transform">
