@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import HeroBubbles from '../components/HeroBubbles';
+import WordReveal from '../components/WordReveal';
 import { ArrowRight, Star, Heart, CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import { IMG } from '../lib/images';
 import { useReveal } from '../hooks/useReveal';
@@ -38,8 +39,14 @@ export default function Home() {
                 />
               </div>
 
-              <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                El Estilista de <span className="text-brand-orange">Confianza</span> de tu Mascota
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                {['El', 'Estilista', 'de'].map((w, i) => (
+                  <span key={w} className="hero-word" style={{ animationDelay: `${0.15 + i * 0.08}s` }}>{w}&nbsp;</span>
+                ))}
+                <span className="hero-word text-brand-orange" style={{ animationDelay: '0.39s' }}>Confianza&nbsp;</span>
+                {['de', 'tu', 'Mascota'].map((w, i) => (
+                  <span key={w} className="hero-word" style={{ animationDelay: `${0.47 + i * 0.08}s` }}>{w}{i < 2 ? ' ' : ''}</span>
+                ))}
               </h1>
               <p className="hero-subtitle text-lg sm:text-xl text-brand-light-teal mb-8 max-w-2xl mx-auto lg:mx-0">
                 Peluquería Canina y Felina en el Valle de Los Chillos por José Joaquín Toledo.

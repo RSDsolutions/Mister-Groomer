@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown, Check, Info } from 'lucide-react';
+import HeroBubbles from '../components/HeroBubbles';
+import WordReveal from '../components/WordReveal';
 import { useReveal } from '../hooks/useReveal';
 
 const SERVICES = [
@@ -85,13 +87,16 @@ export default function Servicios() {
   return (
     <div className="bg-[#FAFAFA]">
       {/* Hero Mini */}
-      <div className="bg-brand-teal pt-12 pb-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-brand-light-teal/80 text-sm font-medium mb-3">
+      <div className="hero-bg relative overflow-hidden pt-12 pb-28 px-4">
+        <HeroBubbles />
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <p className="hero-badge text-brand-light-teal/80 text-sm font-medium mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link> &nbsp;›&nbsp; Servicios
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Nuestros Servicios</h1>
-          <p className="text-brand-light-teal max-w-2xl mx-auto text-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <WordReveal>Nuestros Servicios</WordReveal>
+          </h1>
+          <p className="hero-subtitle text-brand-light-teal max-w-2xl mx-auto text-lg">
             Planes de estética animal personalizados para la salud integral y belleza de tu mejor amigo.
           </p>
         </div>

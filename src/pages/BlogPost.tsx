@@ -1,25 +1,37 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, MoveRight } from 'lucide-react';
 import { IMG } from '../lib/images';
+import { useReveal } from '../hooks/useReveal';
 
 export default function BlogPost() {
+  useReveal();
+
   return (
-    <div className="animate-in fade-in duration-500 bg-white min-h-screen pb-20">
+    <div className="bg-white min-h-screen pb-20">
       {/* Article Header */}
       <div className="max-w-4xl mx-auto px-4 pt-12 pb-8">
-        <Link to="/blog" className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-teal transition-colors text-sm font-medium mb-8">
+        <Link
+          to="/blog"
+          data-reveal
+          className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-teal transition-colors text-sm font-medium mb-8"
+        >
           <ArrowLeft className="w-4 h-4" /> Volver al Blog
         </Link>
-        <div className="mb-4">
+
+        <div className="mb-4" data-reveal>
           <span className="bg-brand-orange/10 text-brand-orange font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest">
             Cuidado
           </span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-brand-dark-teal mb-6 leading-tight">
+
+        <h1
+          data-reveal
+          className="text-4xl md:text-5xl font-bold text-brand-dark-teal mb-6 leading-tight"
+        >
           ¿Cada cuánto tiempo debo bañar a mi perro?
         </h1>
 
-        <div className="flex flex-wrap items-center gap-6 text-brand-muted text-sm border-y border-gray-100 py-4 mb-8">
+        <div className="flex flex-wrap items-center gap-6 text-brand-muted text-sm border-y border-gray-100 py-4 mb-8" data-reveal>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-brand-teal rounded-full text-white flex items-center justify-center font-bold text-lg">J</div>
             <div>
@@ -35,29 +47,34 @@ export default function BlogPost() {
       </div>
 
       {/* Hero Image */}
-      <div className="max-w-5xl mx-auto px-4 mb-12">
+      <div className="max-w-5xl mx-auto px-4 mb-12" data-reveal>
         <div className="aspect-[21/9] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
           <img
             src={IMG.blog[0]}
             alt="Perro siendo bañado – frecuencia ideal de baño"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           />
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-12">
         {/* Article Body */}
-        <article className="lg:w-2/3 prose prose-lg prose-teal prose-p:text-brand-muted prose-headings:text-brand-dark-teal max-w-none">
+        <article
+          data-reveal="left"
+          className="lg:w-2/3 prose prose-lg prose-teal prose-p:text-brand-muted prose-headings:text-brand-dark-teal max-w-none"
+        >
           <p className="lead text-xl text-brand-dark-teal font-medium">
-            Una de las preguntas más frecuentes que recibo en Mr. Groomer es sobre la frecuencia ideal para bañar a las mascotas.
-            La respuesta rápida es: depende. Pero aquí te explicaré las reglas fundamentales.
+            Una de las preguntas más frecuentes que recibo en Mr. Groomer es sobre la frecuencia ideal
+            para bañar a las mascotas. La respuesta rápida es: depende. Pero aquí te explicaré las reglas
+            fundamentales.
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">El mito del baño semanal</h2>
           <p className="mb-6">
-            Muchos dueños creen que bañar a su perro cada semana es lo correcto, pero esto puede ser contraproducente.
-            Bañar demasiado frecuentemente elimina los aceites naturales de la piel, causando resequedad e irritación.
-            El pelaje de cada raza tiene necesidades distintas y es importante respetarlas.
+            Muchos dueños creen que bañar a su perro cada semana es lo correcto, pero esto puede ser
+            contraproducente. Bañar demasiado frecuentemente elimina los aceites naturales de la piel,
+            causando resequedad e irritación. El pelaje de cada raza tiene necesidades distintas y es
+            importante respetarlas.
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Factores a considerar</h2>
@@ -76,16 +93,22 @@ export default function BlogPost() {
           <h2 className="text-2xl font-bold mt-8 mb-4">Conclusión</h2>
           <p className="mb-6">
             Como regla general, un perro sano con piel normal debería bañarse cada 3 a 4 semanas.
-            Usar el shampoo correcto es vital para no alterar su pH. En Mr. Groomer utilizamos opciones cosméticas ideales para cada manto.
+            Usar el shampoo correcto es vital para no alterar su pH. En Mr. Groomer utilizamos opciones
+            cosméticas ideales para cada manto.
           </p>
         </article>
 
         {/* Sidebar */}
-        <aside className="lg:w-1/3 space-y-8">
+        <aside className="lg:w-1/3 space-y-8" data-reveal="right">
           <div className="bg-brand-dark-teal rounded-3xl p-8 text-center text-white shadow-xl">
             <h3 className="text-2xl font-bold mb-4">¿Tienes dudas?</h3>
-            <p className="text-brand-light-teal text-sm mb-6">Agenda una cita y evaluaremos el tipo de pelaje de tu mascota para recomendarte la mejor rutina.</p>
-            <Link to="/reservar" className="inline-block bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3 px-6 rounded-full w-full transition-colors">
+            <p className="text-brand-light-teal text-sm mb-6">
+              Agenda una cita y evaluaremos el tipo de pelaje de tu mascota para recomendarte la mejor rutina.
+            </p>
+            <Link
+              to="/reservar"
+              className="inline-block bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3 px-6 rounded-full w-full transition-all hover:-translate-y-0.5 shadow-lg"
+            >
               Agendar Cita Ahora
             </Link>
           </div>
@@ -99,7 +122,11 @@ export default function BlogPost() {
                 { img: IMG.blog[1], title: 'Señales de que tu gato necesita un baño medicado' },
                 { img: IMG.blog[2], title: 'Cómo elegir el shampoo correcto según la raza' },
               ].map((item, i) => (
-                <Link key={i} to="/blog/post-1" className="flex gap-4 group">
+                <Link
+                  key={i}
+                  to="/blog/post-1"
+                  className="flex gap-4 group hover:-translate-y-0.5 transition-transform duration-200"
+                >
                   <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0">
                     <img
                       src={item.img}
