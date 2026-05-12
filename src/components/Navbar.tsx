@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import NavHeader from './ui/nav-header';
@@ -20,11 +20,22 @@ const ALL_LINKS = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 bg-transparent border-b border-brand-light-teal/30">
+    <nav className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+      scrolled
+        ? 'bg-white/60 backdrop-blur-md border-brand-light-teal/30'
+        : 'bg-transparent border-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
