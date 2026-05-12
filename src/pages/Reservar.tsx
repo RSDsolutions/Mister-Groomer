@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ShinyButton from '../components/ui/shiny-button';
 import { Phone, MapPin, Clock, CalendarDays, CheckCircle2 } from 'lucide-react';
 import HeroBubbles from '../components/HeroBubbles';
 import WordReveal from '../components/WordReveal';
@@ -153,13 +154,9 @@ export default function Reservar() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white text-lg font-bold py-4 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 relative"
-              >
-                <span className="absolute inset-0 rounded-xl bg-brand-orange animate-ping opacity-10 pointer-events-none" />
+              <ShinyButton type="submit" className="w-full text-lg rounded-xl justify-center">
                 Confirmar por WhatsApp
-              </button>
+              </ShinyButton>
             </form>
           </div>
 

@@ -1,12 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HeroBubbles from '../components/HeroBubbles';
 import WordReveal from '../components/WordReveal';
+import ShinyButton from '../components/ui/shiny-button';
 import { ArrowRight, Star, Heart, CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import { IMG } from '../lib/images';
 import { useReveal } from '../hooks/useReveal';
 
 export default function Home() {
   useReveal();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -53,13 +55,9 @@ export default function Home() {
                 Más de 9 años de experiencia nivel Premium de Quito, ahora en tu barrio.
               </p>
               <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link
-                  to="/reservar"
-                  className="bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 relative"
-                >
-                  <span className="absolute inset-0 rounded-full bg-brand-orange animate-ping opacity-20 pointer-events-none" />
+                <ShinyButton onClick={() => navigate('/reservar')} className="text-base">
                   Agendar Cita
-                </Link>
+                </ShinyButton>
                 <Link
                   to="/servicios"
                   className="bg-transparent border border-white hover:bg-white hover:text-brand-dark-teal text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2"
