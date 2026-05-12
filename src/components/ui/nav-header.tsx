@@ -46,7 +46,7 @@ export function NavHeader({ links, className }: NavHeaderProps) {
   return (
     <ul
       className={cn(
-        "relative flex w-fit rounded-full border border-brand-teal/30 bg-white/70 backdrop-blur-sm p-1",
+        "relative flex w-fit rounded-full border border-brand-teal/25 p-1",
         className
       )}
       onMouseLeave={snapToActive}
@@ -64,18 +64,18 @@ export function NavHeader({ links, className }: NavHeaderProps) {
         >
           <Link
             to={link.path}
-            className="block px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white mix-blend-difference whitespace-nowrap select-none"
+            className="block px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-dark-teal whitespace-nowrap select-none transition-colors duration-150"
           >
             {link.name}
           </Link>
         </li>
       ))}
 
-      {/* Sliding cursor pill */}
+      {/* Sliding cursor pill — brand orange */}
       <motion.li
         animate={{ left: position.left, width: position.width, opacity: position.opacity }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="absolute top-[3px] bottom-[3px] z-0 rounded-full bg-brand-dark pointer-events-none"
+        className="absolute top-[3px] bottom-[3px] z-0 rounded-full bg-brand-orange pointer-events-none"
       />
     </ul>
   );
