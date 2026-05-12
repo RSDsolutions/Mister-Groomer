@@ -1,105 +1,104 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import NavHeader from './ui/nav-header';
+import ShinyButton from './ui/shiny-button';
 
 const NAV_LINKS = [
-  { name: 'Inicio', path: '/' },
+  { name: 'Inicio',    path: '/'          },
   { name: 'Servicios', path: '/servicios' },
-  { name: 'Galería', path: '/galeria' },
+  { name: 'Galería',   path: '/galeria'   },
+  { name: 'Blog',      path: '/blog'      },
+  { name: 'Tienda',    path: '/tienda'    },
+  { name: 'Nosotros',  path: '/nosotros'  },
+];
+
+const ALL_LINKS = [
+  ...NAV_LINKS,
   { name: 'Reservar', path: '/reservar' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Tienda', path: '/tienda' },
-  { name: 'Nosotros', path: '/nosotros' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const navigate = useNavigate();
 
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-light-teal shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <Link to="/" className="group">
-              <img
-                src="/images/Logo-MG.png"
-                alt="Mister Groomer"
-                className="h-14 w-auto group-hover:scale-105 transition-transform"
-              />
-            </Link>
+        <div className="flex items-center justify-between h-20">
+
+          {/* Logo */}
+          <Link to="/" className="shrink-0 group">
+            <img
+              src="/images/Logo-MG.png"
+              alt="Mister Groomer"
+              className="h-14 w-auto group-hover:scale-105 transition-transform"
+            />
+          </Link>
+
+          {/* Sliding pill nav — desktop only */}
+          <div className="hidden lg:flex">
+            <NavHeader links={NAV_LINKS} />
           </div>
 
-          <div className="hidden lg:flex items-center space-x-8">
-            <div className="flex space-x-6">
-              {NAV_LINKS.map((link) => {
-                const isActive = location.pathname === link.path;
-                return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`text-sm font-medium transition-colors hover:text-brand-orange ${
-                      isActive ? 'text-brand-orange border-b-2 border-brand-orange pb-1' : 'text-brand-dark'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
-            <Link
-              to="/reservar"
-              className="bg-brand-orange hover:bg-brand-orange-dark text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+          {/* CTA button — desktop only */}
+          <div className="hidden lg:flex">
+            <ShinyButton
+              onClick={() => navigate('/reservar')}
+              className="text-sm px-6 py-2.5"
             >
-              Agendar Cita
-            </Link>
+              Reservar Cita
+            </ShinyButton>
           </div>
 
-          <div className="flex items-center lg:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-brand-dark hover:text-brand-orange transition-colors p-2"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
+          {/* Hamburger — mobile only */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-brand-dark hover:text-brand-orange transition-colors p-2"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full h-[calc(100vh-5rem)] bg-white border-t border-gray-100 flex flex-col pt-8 px-6 overflow-y-auto">
-          <div className="flex flex-col space-y-6">
-            {NAV_LINKS.map((link) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-xl font-medium transition-colors ${
-                    isActive ? 'text-brand-orange' : 'text-brand-dark'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-            <div className="pt-6 border-t border-gray-100">
+      {/* ── Mobile menu ── */}
+      <div
+        className={`lg:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="flex flex-col px-6 pt-6 pb-8 space-y-1">
+          {ALL_LINKS.map((link) => {
+            const active =
+              link.path === '/'
+                ? location.pathname === '/'
+                : location.pathname.startsWith(link.path);
+            return (
               <Link
-                to="/reservar"
+                key={link.path}
+                to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="bg-brand-orange hover:bg-brand-orange-dark text-white px-6 py-4 rounded-full font-medium transition-colors flex justify-center text-lg w-full"
+                className={`text-lg font-medium py-3 border-b border-gray-50 transition-colors ${
+                  active ? 'text-brand-orange' : 'text-brand-dark hover:text-brand-teal'
+                }`}
               >
-                Agendar Cita
+                {link.name}
               </Link>
-            </div>
+            );
+          })}
+
+          <div className="pt-4">
+            <ShinyButton
+              onClick={() => { navigate('/reservar'); setIsOpen(false); }}
+              className="w-full text-base py-3 rounded-xl justify-center"
+            >
+              Reservar Cita Ahora
+            </ShinyButton>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
