@@ -19,21 +19,23 @@ function App() {
   return (
     <>
       {!splashDone && <SplashScreen onDone={handleSplashDone} />}
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="servicios" element={<Servicios />} />
-            <Route path="galeria" element={<Galeria />} />
-            <Route path="reservar" element={<Reservar />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="blog/:id" element={<BlogPost />} />
-            <Route path="tienda" element={<Tienda />} />
-            <Route path="nosotros" element={<Nosotros />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      {splashDone && (
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="servicios" element={<Servicios />} />
+              <Route path="galeria" element={<Galeria />} />
+              <Route path="reservar" element={<Reservar />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="blog/:id" element={<BlogPost />} />
+              <Route path="tienda" element={<Tienda />} />
+              <Route path="nosotros" element={<Nosotros />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      )}
     </>
   );
 }
