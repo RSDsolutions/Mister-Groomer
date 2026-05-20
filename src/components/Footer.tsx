@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Phone, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Phone, MapPin, PawPrint } from 'lucide-react';
 
 // actually let's just use standard Lucide icons and an SVG for WA if necessary. I'll swap it to use a MessageCircle or a custom SVG.
 // Using custom SVG for Whatsapp for simplicity without extra packages.
@@ -17,12 +17,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Col */}
           <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
-            <Link to="/" className="group">
-              <img
-                src="/images/Logo-MG.png"
-                alt="Mister Groomer"
-                className="h-20 w-auto group-hover:scale-105 transition-transform rounded-xl"
-              />
+            <Link to="/" className="group flex items-center gap-2.5">
+              <div className="bg-brand-orange rounded-xl p-2.5 group-hover:scale-105 transition-transform shadow-sm">
+                <PawPrint className="w-7 h-7 text-white" />
+              </div>
+              <div className="leading-tight">
+                <span className="block text-2xl font-bold text-white leading-none">PawLux</span>
+                <span className="block text-xs font-semibold text-brand-orange uppercase tracking-widest">Studio</span>
+              </div>
             </Link>
             <p className="text-brand-light-teal text-sm mt-2">
               Mantenemos Lindas, Sanas y Felices a sus Mascotas.
@@ -56,15 +58,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-brand-light-teal">
                 <WhatsAppIcon className="w-5 h-5 shrink-0 mt-0.5 text-brand-orange" />
-                <a href="https://wa.me/593978751586" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">097 875 1586</a>
+                <a href="#" className="hover:text-white transition-colors">+1 (555) 000-0000</a>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-light-teal">
                 <Phone className="w-5 h-5 shrink-0 mt-0.5 text-brand-orange" />
-                <a href="tel:+593998937473" className="hover:text-white transition-colors">099 893 7473</a>
+                <a href="#" className="hover:text-white transition-colors">+1 (555) 000-0001</a>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-light-teal">
                 <MapPin className="w-5 h-5 shrink-0 mt-0.5 text-brand-orange" />
-                <span>Sector PTE. 8, Conocoto, Quito</span>
+                <span>Tu Dirección, Tu Ciudad</span>
               </li>
             </ul>
 
@@ -75,7 +77,7 @@ export default function Footer() {
               <a href="#" className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white hover:bg-brand-orange-dark transition-all hover:-translate-y-1">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/593978751586" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white hover:bg-brand-orange-dark transition-all hover:-translate-y-1">
+              <a href="#" className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white hover:bg-brand-orange-dark transition-all hover:-translate-y-1">
                 <WhatsAppIcon className="w-5 h-5" />
               </a>
             </div>
@@ -84,7 +86,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-brand-teal/30 text-center flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-brand-light-teal text-xs opacity-80">
-            © 2025 Mr. Groomer · Conocoto, Quito, Ecuador
+            © 2025 PawLux Studio · Tu Ciudad, Tu País
           </p>
           <p className="text-brand-light-teal text-xs opacity-80">
             Mantenemos Lindas, Sanas y Felices a sus Mascotas.

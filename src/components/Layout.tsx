@@ -43,7 +43,7 @@ export default function Layout() {
 
       {/* Floating WhatsApp button */}
       <a
-        href="https://wa.me/593978751586"
+        href="#"
         target="_blank"
         rel="noreferrer"
         aria-label="Contactar por WhatsApp"

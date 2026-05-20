@@ -21,7 +21,7 @@ export default function Nosotros() {
             <WordReveal>Nuestra Historia</WordReveal>
           </h1>
           <p className="hero-subtitle text-brand-light-teal max-w-2xl mx-auto text-lg sm:text-xl font-light">
-            De las peluquerías Premium de Quito a tu barrio. Conoce la pasión detrás de Mr. Groomer.
+            Conoce la pasión y la historia detrás de PawLux Studio.
           </p>
         </div>
       </div>
@@ -32,15 +32,12 @@ export default function Nosotros() {
           {/* Image */}
           <div
             data-reveal="left"
-            className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+            className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-brand-light-teal/40 to-brand-teal/20 flex flex-col items-center justify-center gap-4"
           >
-            <img
-              src={IMG.founder}
-              alt="José Joaquín Toledo – Fundador y Head Groomer de Mr. Groomer"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
+            <span className="text-8xl opacity-20">📷</span>
+            <p className="text-brand-teal/50 text-sm font-medium uppercase tracking-widest">Tu foto aquí</p>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-              <p className="text-white font-bold text-xl">José Joaquín Toledo</p>
+              <p className="text-white font-bold text-xl">[Tu Nombre]</p>
               <p className="text-brand-light-teal text-sm">Fundador &amp; Head Groomer</p>
             </div>
           </div>
@@ -48,25 +45,24 @@ export default function Nosotros() {
           {/* Text */}
           <div data-reveal="right">
             <span className="text-brand-orange font-bold tracking-widest uppercase text-sm mb-2 block">
-              Un Emprendimiento Familiar
+              Un Emprendimiento con Corazón
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-6 leading-tight">
-              Años de experiencia premium, ahora en el Valle de Los Chillos.
+              Años de experiencia premium, ahora disponibles para tu mascota.
             </h2>
             <div className="space-y-4 text-brand-muted text-lg mb-8 leading-relaxed">
               <p>
-                Mr. Groomer nace del corazón y la dedicación. Tras trabajar durante más de 9 años como estilista
-                canino y felino en algunas de las peluquerías más prestigiosas y de nivel Premium en el norte de
-                Quito, decidí emprender junto a mi familia.
+                PawLux Studio nace del corazón y la dedicación. Tras años de formación como estilista
+                canino y felino en algunos de los salones más prestigiosos de la ciudad, decidimos emprender
+                con un proyecto propio.
               </p>
               <p>
                 La idea era simple pero poderosa: traer ese mismo nivel de exigencia, técnica refinada y uso de
-                productos de altísima gama, pero con un trato cercano y cálido, directo a nuestro propio sector
-                en el Valle de Los Chillos.
+                productos de altísima gama, pero con un trato cercano y cálido, directo a nuestros clientes.
               </p>
               <p>
                 Creemos que el grooming no es solo estética; es salud, es prevención y es una demostración de
-                amor. Cada mascota que entra a nuestro local se convierte en un miembro más de la familia Mr. Groomer.
+                amor. Cada mascota que entra a nuestro local se convierte en un miembro más de la familia PawLux Studio.
               </p>
             </div>
 
@@ -108,7 +104,7 @@ export default function Nosotros() {
               <h3 className="text-2xl font-bold bg-white/10 w-max px-4 py-1.5 rounded-full mb-6">Misión</h3>
               <p className="text-xl sm:text-2xl font-light leading-relaxed">
                 "Mantener lindas, sanas y felices a las mascotas de nuestros clientes mediante servicios de
-                estética animal de primer nivel, en un ambiente amigable y seguro."
+                estética animal de primer nivel, en un ambiente amigable, seguro y libre de estrés."
               </p>
             </div>
             <div
@@ -118,8 +114,8 @@ export default function Nosotros() {
             >
               <h3 className="text-2xl font-bold bg-white/20 w-max px-4 py-1.5 rounded-full mb-6 text-brand-dark-teal">Visión</h3>
               <p className="text-xl sm:text-2xl font-medium leading-relaxed text-brand-dark-teal">
-                "Ser la peluquería canina y felina de referencia en el Valle de los Chillos, reconocidos por
-                nuestra calidad Premium, técnica impecable y amor por los animales."
+                "Ser la peluquería canina y felina de referencia en nuestra ciudad, reconocidos por
+                nuestra calidad Premium, técnica impecable y amor genuino por los animales."
               </p>
             </div>
           </div>
@@ -136,10 +132,10 @@ export default function Nosotros() {
           {/* Timeline */}
           <div className="max-w-3xl mx-auto relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-brand-light-teal">
             {[
-              { year: '2015', title: 'El Inicio de la Pasión',       desc: 'Comienzo de formación profesional y trabajo en peluquerías locales de alto nivel.' },
-              { year: '2018', title: 'Especialización Premium',       desc: 'Consolidación de técnicas modernas, tijeras japonesas y manejo avanzado de razas específicas en salones Premium al norte de la ciudad.' },
-              { year: '2022', title: 'Concepción de la Idea',         desc: 'Nace la visión de crear un servicio independiente, familiar pero con estándares corporativos.' },
-              { year: '2025', title: 'Nace Mr. Groomer 🎉',           desc: 'Apertura de nuestro primer local propio en el Valle de Los Chillos, brindando cercanía y excelencia a nuestro sector.' },
+              { year: '[Año]', title: 'El Inicio de la Pasión',       desc: 'Comienzo de formación profesional y trabajo en peluquerías locales de alto nivel.' },
+              { year: '[Año]', title: 'Especialización Premium',       desc: 'Consolidación de técnicas modernas y manejo avanzado de razas específicas en salones de primer nivel.' },
+              { year: '[Año]', title: 'Concepción de la Idea',         desc: 'Nace la visión de crear un servicio independiente, familiar pero con estándares profesionales.' },
+              { year: '[Año]', title: 'Nace PawLux Studio 🎉',         desc: 'Apertura de nuestro primer local propio, brindando cercanía y excelencia a nuestra comunidad.' },
             ].map((step, i) => (
               <div
                 key={i}
@@ -165,7 +161,7 @@ export default function Nosotros() {
       <div className="py-24 text-center max-w-4xl mx-auto px-4" data-reveal="scale">
         <span className="inline-block text-brand-orange font-semibold text-sm uppercase tracking-widest mb-4">¡Únete!</span>
         <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-teal mb-6">
-          ¿Quieres ser parte de la familia Mr. Groomer?
+          ¿Quieres ser parte de la familia PawLux Studio?
         </h2>
         <p className="text-brand-muted mb-8 text-lg">Confía la estética de tu mejor amigo a manos expertas.</p>
         <Link

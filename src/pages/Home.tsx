@@ -34,11 +34,10 @@ export default function Home() {
               </div>
 
               <div className="block lg:hidden mb-6 hero-image">
-                <img
-                  src={IMG.hero}
-                  alt="Perros divirtiéndose en el baño en Mr. Groomer"
-                  className="h-52 w-auto mx-auto object-contain drop-shadow-xl mix-blend-multiply"
-                />
+                <div className="h-52 w-52 mx-auto rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 flex flex-col items-center justify-center gap-2 shadow-xl">
+                  <span className="text-6xl">🐾</span>
+                  <p className="text-white/60 text-xs font-medium uppercase tracking-widest">Tu imagen aquí</p>
+                </div>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
@@ -51,8 +50,8 @@ export default function Home() {
                 ))}
               </h1>
               <p className="hero-subtitle text-lg sm:text-xl text-brand-light-teal mb-8 max-w-2xl mx-auto lg:mx-0">
-                Peluquería Canina y Felina en el Valle de Los Chillos por José Joaquín Toledo.
-                Más de 9 años de experiencia nivel Premium de Quito, ahora en tu barrio.
+                Peluquería Canina y Felina con los mejores estilistas de la ciudad.
+                Años de experiencia Premium, ahora disponibles para tu mascota.
               </p>
               <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <ShinyButton onClick={() => navigate('/reservar')} className="text-base">
@@ -67,12 +66,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden lg:flex relative h-[520px] items-end justify-center hero-image">
-              <img
-                src={IMG.hero}
-                alt="Perros divirtiéndose en el baño en Mr. Groomer"
-                className="h-full w-full object-contain drop-shadow-2xl relative z-10 mix-blend-multiply"
-              />
+            <div className="hidden lg:flex relative h-[520px] items-center justify-center hero-image">
+              <div className="w-80 h-80 rounded-[3rem] bg-white/10 backdrop-blur-sm border border-white/20 flex flex-col items-center justify-center gap-4 shadow-2xl">
+                <span className="text-8xl">🐾</span>
+                <p className="text-white/50 text-sm font-medium uppercase tracking-widest">Tu imagen aquí</p>
+              </div>
             </div>
           </div>
         </div>
@@ -84,21 +82,21 @@ export default function Home() {
       <div className="bg-brand-orange overflow-hidden py-3 select-none">
         <div className="animate-marquee">
           <div className="flex items-center whitespace-nowrap px-8 text-white font-bold text-sm gap-6">
-            <span>🐾 Mr. Groomer</span><span className="opacity-40 mx-1">✦</span>
+            <span>🐾 PawLux Studio</span><span className="opacity-40 mx-1">✦</span>
             <span>🐕 Peluquería Canina &amp; Felina</span><span className="opacity-40 mx-1">✦</span>
             <span>⭐ 9+ Años de Experiencia Premium</span><span className="opacity-40 mx-1">✦</span>
             <span>🛁 Baño Profesional</span><span className="opacity-40 mx-1">✦</span>
-            <span>📍 Valle de Los Chillos</span><span className="opacity-40 mx-1">✦</span>
+            <span>📍 Tu Ciudad</span><span className="opacity-40 mx-1">✦</span>
             <span>💛 Tu Mascota lo Merece</span><span className="opacity-40 mx-1">✦</span>
             <span>🎀 Resultados que Enamoran</span><span className="opacity-40 mx-1">✦</span>
             <span>🐈 ¡También Atendemos Gatos!</span><span className="opacity-40 mx-1">✦</span>&nbsp;&nbsp;
           </div>
           <div className="flex items-center whitespace-nowrap px-8 text-white font-bold text-sm gap-6" aria-hidden="true">
-            <span>🐾 Mr. Groomer</span><span className="opacity-40 mx-1">✦</span>
+            <span>🐾 PawLux Studio</span><span className="opacity-40 mx-1">✦</span>
             <span>🐕 Peluquería Canina &amp; Felina</span><span className="opacity-40 mx-1">✦</span>
             <span>⭐ 9+ Años de Experiencia Premium</span><span className="opacity-40 mx-1">✦</span>
             <span>🛁 Baño Profesional</span><span className="opacity-40 mx-1">✦</span>
-            <span>📍 Valle de Los Chillos</span><span className="opacity-40 mx-1">✦</span>
+            <span>📍 Tu Ciudad</span><span className="opacity-40 mx-1">✦</span>
             <span>💛 Tu Mascota lo Merece</span><span className="opacity-40 mx-1">✦</span>
             <span>🎀 Resultados que Enamoran</span><span className="opacity-40 mx-1">✦</span>
             <span>🐈 ¡También Atendemos Gatos!</span><span className="opacity-40 mx-1">✦</span>&nbsp;&nbsp;
@@ -131,7 +129,7 @@ export default function Home() {
               data-delay="400"
               className="bg-emerald-50 border border-emerald-200 text-emerald-700 px-6 py-3 rounded-full font-medium flex items-center gap-2 shadow-sm hover:-translate-y-1 transition-transform cursor-default"
             >
-              <CheckCircle2 className="w-5 h-5 text-emerald-500" /> Valle de Los Chillos
+              <CheckCircle2 className="w-5 h-5 text-emerald-500" /> Tu Ciudad
             </div>
           </div>
         </div>
@@ -198,14 +196,10 @@ export default function Home() {
             {/* Image – slides in from left */}
             <div
               data-reveal="left"
-              className="order-2 lg:order-1 h-[400px] lg:h-[580px] w-full rounded-3xl overflow-hidden shadow-2xl"
+              className="order-2 lg:order-1 h-[400px] lg:h-[580px] w-full rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-brand-light-teal/50 to-brand-teal/30 flex flex-col items-center justify-center gap-4"
             >
-              <img
-                src={IMG.aboutTeaser}
-                alt="José Joaquín Toledo trabajando con una mascota en Mr. Groomer"
-                className="h-full w-full object-cover hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
+              <span className="text-8xl opacity-30">📷</span>
+              <p className="text-brand-teal/60 text-sm font-medium uppercase tracking-widest">Tu foto aquí</p>
             </div>
 
             {/* Text – slides in from right */}
@@ -215,7 +209,7 @@ export default function Home() {
                 Un emprendimiento familiar con corazón
               </h2>
               <p className="text-brand-muted text-lg mb-8 leading-relaxed">
-                Mr. Groomer nace del deseo de brindar un servicio de excelencia, cuidando cada detalle
+                PawLux Studio nace del deseo de brindar un servicio de excelencia, cuidando cada detalle
                 para que tu mascota viva una experiencia sin estrés y con resultados profesionales.
               </p>
 
@@ -263,7 +257,7 @@ export default function Home() {
           </div>
 
           <div className="flex overflow-x-auto gap-6 sm:gap-8 pb-8 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
-            {IMG.galleryTeaser.map((src, i) => (
+            {[0, 1, 2].map((i) => (
               <div
                 key={i}
                 data-reveal
@@ -271,12 +265,10 @@ export default function Home() {
                 className="min-w-[280px] w-[78vw] sm:w-[380px] shrink-0 snap-center"
               >
                 <div className="bg-white rounded-3xl p-4 shadow-md h-72 sm:h-80 overflow-hidden hover:-translate-y-2 transition-transform duration-300">
-                  <img
-                    src={src}
-                    alt={`Resultado de grooming ${i + 1} en Mr. Groomer`}
-                    className="h-full w-full object-cover rounded-2xl hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                  />
+                  <div className="h-full w-full rounded-2xl bg-gradient-to-br from-brand-light-teal/40 to-brand-teal/20 flex flex-col items-center justify-center gap-3">
+                    <span className="text-5xl opacity-20">🐾</span>
+                    <p className="text-xs text-brand-teal/50 font-medium uppercase tracking-widest">Tu foto aquí</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -303,9 +295,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { img: IMG.blog[1], title: 'Señales de que tu gato necesita un baño medicado',         date: '10 Ene 2025' },
-              { img: IMG.blog[2], title: 'Cómo elegir el shampoo correcto según la raza',            date: '05 Ene 2025' },
-              { img: IMG.blog[5], title: 'Preparar a tu cachorro para su primer baño profesional',   date: '15 Dic 2024' },
+              { title: 'Señales de que tu gato necesita un baño medicado',         date: '10 Ene 2025' },
+              { title: 'Cómo elegir el shampoo correcto según la raza',            date: '05 Ene 2025' },
+              { title: 'Preparar a tu cachorro para su primer baño profesional',   date: '15 Dic 2024' },
             ].map((post, i) => (
               <div
                 key={i}
@@ -313,13 +305,9 @@ export default function Home() {
                 data-delay={String(i * 150)}
                 className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group flex flex-col"
               >
-                <div className="h-52 relative overflow-hidden">
-                  <img
-                    src={post.img}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-600"
-                    loading="lazy"
-                  />
+                <div className="h-52 relative overflow-hidden bg-gradient-to-br from-brand-light-teal/40 to-brand-teal/20 flex flex-col items-center justify-center gap-2">
+                  <span className="text-4xl opacity-20">📷</span>
+                  <p className="text-xs text-brand-teal/50 font-medium uppercase tracking-widest">Tu foto aquí</p>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
@@ -375,16 +363,14 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" data-reveal data-delay="200">
             <a
-              href="https://wa.me/593978751586"
-              target="_blank"
-              rel="noreferrer"
+              href="#"
               className="w-full sm:w-auto bg-brand-orange hover:bg-brand-orange-dark text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3 relative"
             >
               <span className="absolute inset-0 rounded-full bg-brand-orange animate-ping opacity-20 pointer-events-none" />
               <MessageCircle className="w-6 h-6" /> WhatsApp
             </a>
             <a
-              href="tel:+593998937473"
+              href="#"
               className="w-full sm:w-auto bg-white hover:bg-gray-100 text-brand-dark-teal px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3"
             >
               <Phone className="w-6 h-6" /> Llamar

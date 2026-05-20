@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, PawPrint } from 'lucide-react';
 import NavHeader from './ui/nav-header';
 import ShinyButton from './ui/shiny-button';
 
@@ -36,16 +36,23 @@ export default function Navbar() {
         ? 'bg-white/60 backdrop-blur-md border-brand-light-teal/30'
         : 'bg-transparent border-transparent'
     }`}>
+      {/* ── DEMO Banner ── */}
+      <div className="w-full bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 text-white text-center py-2 px-4 text-xs font-bold tracking-[0.18em] uppercase select-none">
+        🛠 Demo &nbsp;·&nbsp; Plantilla de demostración &nbsp;·&nbsp; PawLux Studio Template &nbsp;🛠
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link to="/" className="shrink-0 group">
-            <img
-              src="/images/Logo-MG.png"
-              alt="Mister Groomer"
-              className="h-14 w-auto group-hover:scale-105 transition-transform"
-            />
+          <Link to="/" className="shrink-0 group flex items-center gap-2.5">
+            <div className="bg-brand-orange rounded-xl p-2 group-hover:scale-105 transition-transform shadow-sm">
+              <PawPrint className="w-6 h-6 text-white" />
+            </div>
+            <div className="leading-tight">
+              <span className="block text-xl font-bold text-brand-dark-teal leading-none">PawLux</span>
+              <span className="block text-[10px] font-semibold text-brand-orange uppercase tracking-widest">Studio</span>
+            </div>
           </Link>
 
           {/* Sliding pill nav — desktop only */}
@@ -76,7 +83,7 @@ export default function Navbar() {
 
       {/* ── Mobile menu ── */}
       <div
-        className={`lg:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >

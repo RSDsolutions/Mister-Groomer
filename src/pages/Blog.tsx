@@ -45,12 +45,9 @@ export default function Blog() {
           className="block mb-16 bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-gray-100 group hover:-translate-y-1"
         >
           <div className="flex flex-col md:flex-row h-full">
-            <div className="w-full md:w-1/2 lg:w-3/5 h-64 md:h-auto overflow-hidden">
-              <img
-                src={IMG.blog[0]}
-                alt="¿Cada cuánto tiempo debo bañar a mi perro?"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
+            <div className="w-full md:w-1/2 lg:w-3/5 h-64 md:h-auto overflow-hidden bg-gradient-to-br from-brand-light-teal/40 to-brand-teal/20 flex flex-col items-center justify-center gap-3">
+              <span className="text-6xl opacity-20 group-hover:scale-105 transition-transform duration-700">📷</span>
+              <p className="text-xs text-brand-teal/50 font-medium uppercase tracking-widest">Tu foto destacada aquí</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-2/5 p-8 md:p-12 flex flex-col justify-center">
               <span className="inline-block bg-brand-orange/10 text-brand-orange font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest w-max mb-4">
@@ -89,18 +86,14 @@ export default function Blog() {
               data-delay={String(Math.min(i * 100, 500))}
               className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col hover:-translate-y-2"
             >
-              <div className="h-56 relative overflow-hidden">
+              <div className="h-56 relative overflow-hidden bg-gradient-to-br from-brand-light-teal/40 to-brand-teal/20 flex flex-col items-center justify-center gap-2">
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-white/90 backdrop-blur-sm text-brand-dark-teal text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                     {post.cat}
                   </span>
                 </div>
-                <img
-                  src={POST_IMAGES[i] ?? IMG.blog[1]}
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <span className="text-4xl opacity-20 group-hover:scale-110 transition-transform duration-700">📷</span>
+                <p className="text-xs text-brand-teal/50 font-medium uppercase tracking-widest">Tu foto aquí</p>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6 flex-grow flex flex-col">
@@ -110,8 +103,8 @@ export default function Blog() {
                 <p className="text-brand-muted text-sm mb-6 line-clamp-2">{post.exc}</p>
                 <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-brand-muted">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 bg-brand-teal rounded-full text-white flex items-center justify-center font-bold text-sm">J</div>
-                    <span className="font-semibold text-brand-dark-teal">José Joaquín</span>
+                    <div className="w-7 h-7 bg-brand-teal rounded-full text-white flex items-center justify-center font-bold text-sm">?</div>
+                    <span className="font-semibold text-brand-dark-teal">Tu Nombre</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span>{post.date}</span>

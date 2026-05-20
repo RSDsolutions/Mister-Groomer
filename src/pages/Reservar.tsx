@@ -26,8 +26,8 @@ export default function Reservar() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `¡Hola Mr. Groomer! Quisiera agendar una cita.%0A%0A*Detalles:*%0A- Mi nombre: ${formData.ownerName}%0A- Mascota: ${formData.petName} (${formData.petType}, ${formData.breed})%0A- Servicio: ${formData.service}%0A- Fecha preferida: ${formData.date}%0A- Hora preferida: ${formData.time}%0A- Notas: ${formData.notes || 'Ninguna'}%0A%0A¿Tienen disponibilidad?`;
-    window.open(`https://wa.me/593978751586?text=${message}`, '_blank');
+    const message = `¡Hola PawLux Studio! Quisiera agendar una cita.%0A%0A*Detalles:*%0A- Mi nombre: ${formData.ownerName}%0A- Mascota: ${formData.petName} (${formData.petType}, ${formData.breed})%0A- Servicio: ${formData.service}%0A- Fecha preferida: ${formData.date}%0A- Hora preferida: ${formData.time}%0A- Notas: ${formData.notes || 'Ninguna'}%0A%0A¿Tienen disponibilidad?`;
+    window.open(`https://wa.me/10000000000?text=${message}`, '_blank');
   };
 
   return (
@@ -59,8 +59,8 @@ export default function Reservar() {
             <div className="flex gap-3 mb-8 bg-brand-light-teal/50 p-4 rounded-xl border border-brand-teal/20">
               <CheckCircle2 className="w-6 h-6 text-brand-teal shrink-0 mt-0.5" />
               <p className="text-sm text-brand-dark-teal font-medium">
-                Todas las citas son confirmadas directamente por WhatsApp con José Joaquín para asegurar
-                la mejor atención.
+                Todas las citas son confirmadas directamente por WhatsApp para asegurar
+                la mejor atención para tu mascota.
               </p>
             </div>
 
@@ -169,9 +169,7 @@ export default function Reservar() {
               </p>
               <div className="space-y-4">
                 <a
-                  href="https://wa.me/593978751586"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="#"
                   className="flex items-center gap-4 bg-brand-teal hover:bg-brand-dark-teal p-4 rounded-2xl transition-all hover:-translate-y-0.5 w-full border border-white/10"
                 >
                   <div className="bg-white/20 p-2 rounded-full">
@@ -181,11 +179,11 @@ export default function Reservar() {
                   </div>
                   <div>
                     <span className="block text-xs uppercase tracking-wider font-semibold text-brand-light-teal">WhatsApp</span>
-                    <span className="font-bold text-lg">097 875 1586</span>
+                    <span className="font-bold text-lg">+1 (555) 000-0000</span>
                   </div>
                 </a>
                 <a
-                  href="tel:+593998937473"
+                  href="#"
                   className="flex items-center gap-4 bg-brand-teal hover:bg-brand-dark-teal p-4 rounded-2xl transition-all hover:-translate-y-0.5 w-full border border-white/10"
                 >
                   <div className="bg-white/20 p-2 rounded-full">
@@ -193,7 +191,7 @@ export default function Reservar() {
                   </div>
                   <div>
                     <span className="block text-xs uppercase tracking-wider font-semibold text-brand-light-teal">Llamada</span>
-                    <span className="font-bold text-lg">099 893 7473</span>
+                    <span className="font-bold text-lg">+1 (555) 000-0001</span>
                   </div>
                 </a>
               </div>
@@ -204,8 +202,8 @@ export default function Reservar() {
               <div className="flex gap-4 items-start bg-gray-50 p-4 rounded-xl mb-6">
                 <MapPin className="w-6 h-6 text-brand-orange shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-brand-dark">Sector PTE. 8</p>
-                  <p className="text-sm text-brand-muted">Conocoto, Quito, Ecuador</p>
+                  <p className="font-semibold text-brand-dark">Tu Dirección</p>
+                  <p className="text-sm text-brand-muted">Tu Ciudad, Tu País</p>
                 </div>
               </div>
               <div className="aspect-[4/3] bg-gray-100 rounded-xl flex items-center justify-center p-4 text-center text-sm text-brand-muted border-2 border-dashed border-gray-200">

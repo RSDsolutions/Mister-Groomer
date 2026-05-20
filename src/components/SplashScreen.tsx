@@ -59,7 +59,7 @@ export default function SplashScreen({ onDone }: { onDone: () => void }) {
         {/* Nombre */}
         <div>
           <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none">
-            Mr. <span className="text-brand-orange">Groomer</span>
+            PawLux <span className="text-brand-orange">Studio</span>
           </h1>
           <p className="mt-2 text-brand-light-teal text-sm sm:text-base font-medium tracking-widest uppercase">
             Peluquería Canina & Felina

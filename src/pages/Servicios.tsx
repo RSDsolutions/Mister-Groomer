@@ -9,7 +9,7 @@ const SERVICES = [
     id: 1,
     title: 'Servicio Completo',
     icon: '🛁',
-    price: 'Desde $17',
+    price: 'Desde $20',
     desc: 'Un spa relajante para que tu mascota quede impecable y libre de estrés. Precio base para mascotas pequeñas (hasta 30 cm de altura o menos de 20 lbs).',
     includes: [
       'Baño con agua tibia',
@@ -24,7 +24,7 @@ const SERVICES = [
     id: 2,
     title: 'Baño Cosmético',
     icon: '✨',
-    price: 'Desde $12',
+    price: 'Desde $15',
     desc: 'Ideal para el mantenimiento regular entre cortes.',
     includes: [
       'Shampoo y acondicionador cosmético',
@@ -38,7 +38,7 @@ const SERVICES = [
     id: 3,
     title: 'Baño Medicado',
     icon: '💊',
-    price: 'Desde $15',
+    price: 'Desde $18',
     desc: 'Tratamiento especializado para problemas de piel.',
     includes: [
       'Shampoo medicado dermatológico',
@@ -51,7 +51,7 @@ const SERVICES = [
     id: 4,
     title: 'Corte y Limado de Uñas',
     icon: '✂️',
-    price: 'Desde $3',
+    price: 'Desde $5',
     desc: 'Cuidado esencial para su comodidad al caminar y prevenir accidentes.',
     includes: [
       'Corte seguro y preciso',
@@ -63,7 +63,7 @@ const SERVICES = [
     id: 5,
     title: 'Paseos Caninos',
     icon: '🦮',
-    price: 'Desde $4/hr/mascota',
+    price: 'Desde $8/hr/mascota',
     desc: 'Ejercicio, socialización y diversión para tu perro bajo supervisión profesional.',
     includes: [
       'Paseo supervisado en área segura',

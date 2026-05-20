@@ -63,12 +63,9 @@ export default function Galeria() {
               className="fade-slide-up group relative rounded-2xl overflow-hidden aspect-[4/5] bg-white shadow-sm hover:shadow-xl transition-shadow cursor-pointer"
               style={{ animationDelay: `${Math.min(i * 60, 480)}ms` }}
             >
-              <img
-                src={item.src}
-                alt={`${item.breed} – ${item.service} en Mr. Groomer`}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
-              />
+              <div className="w-full h-full bg-gradient-to-br from-brand-light-teal/40 to-brand-teal/20 flex flex-col items-center justify-center gap-2 transition-transform duration-700 group-hover:scale-110">
+                <span className="text-4xl opacity-20">📷</span>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <div className="flex flex-wrap gap-2 mb-3">
                   <span className="bg-white/20 backdrop-blur-md text-white text-xs font-medium px-3 py-1 rounded-full border border-white/30">
@@ -79,8 +76,8 @@ export default function Galeria() {
                   </span>
                 </div>
                 <p className="text-white text-sm font-light">
-                  Estilista: José Joaquín<br />
-                  <span className="text-white/70 text-xs">Mr. Groomer</span>
+                  Estilista: [Tu Nombre]<br />
+                  <span className="text-white/70 text-xs">PawLux Studio</span>
                 </p>
               </div>
             </div>
@@ -105,10 +102,16 @@ export default function Galeria() {
               >
                 <BeforeAfterSlider
                   beforeImage={
-                    <img src={pair.before} alt={`${pair.name} antes del grooming`} className="w-full h-full object-cover" />
+                    <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex flex-col items-center justify-center gap-2">
+                      <span className="text-4xl opacity-30">📷</span>
+                      <p className="text-xs text-slate-500 font-medium uppercase tracking-widest">Antes</p>
+                    </div>
                   }
                   afterImage={
-                    <img src={pair.after} alt={`${pair.name} después del grooming`} className="w-full h-full object-cover" />
+                    <div className="w-full h-full bg-gradient-to-br from-brand-light-teal/50 to-brand-teal/30 flex flex-col items-center justify-center gap-2">
+                      <span className="text-4xl opacity-30">✨</span>
+                      <p className="text-xs text-brand-teal/70 font-medium uppercase tracking-widest">Después</p>
+                    </div>
                   }
                 />
                 <div className="text-center">
